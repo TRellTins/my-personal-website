@@ -18,6 +18,45 @@
         <link href="https://fonts.googleapis.com" rel="preconnect"/>
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+        <style>
+            .testimonials-container {
+                overflow: hidden;
+                height: 200px;
+                width: 100%;
+                position: relative;
+            }
+    
+            .testimonials-wrapper {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                animation: scroll 20s linear infinite;
+            }
+    
+            .testimonial-item {
+                position: relative;
+                padding: 10px 20px;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+                background: #000000; /* backgroud color for visibbility*/
+                border: 3px solid #D7BCE8; /* bborder for visibbility*/
+                border-radius: 20px;
+                line-height: 2px;
+            }
+
+            .testimonial-item cite {
+                position: absolute;
+                bottom: 10px; /* distance from the bottom */
+                right: 10px; /* distance from the right */
+                font-style: italic;
+                color: #f7f3f3; /* review name text color */
+            }
+    
+            @keyframes scroll {
+                0% { transform: translateY(100%); }
+                100% { transform: translateY(-100%); }
+            }
+        </style>
         <script type="text/javascript">
             WebFont.load({
                 google: {
@@ -86,140 +125,130 @@
                         <div class="home-tab-page">
                             <div class="tab-pane">
                                 <div class="tab-content-wrapper">
-                                    <h1 class="page-title">about me</h1>
+                                    <h1 class="page-title">About Me</h1>
                                     <div class="basic-information-wrapper">
                                         <div class="basic-information">34 years</div>
                                         <div class="basic-information-divider">/</div>
                                         <div class="basic-information">Mechanicsville, VA</div>
                                     </div>
-                                    <p class="home-main-info">Prolific, full stack web developer with a passion for metrics and beating former &quot;best-yets.&quot;Prototyped 25 new product features per year for Flexor, Inc. Decreased rework by 22% and costs by 15%. Consistently receive high user experience scores for all web development projects, including a 55% increase for Flexor, Inc. Passionate about building world class web applications. One of my sites received a 2020 Webby for Best Navigation and Structure.</p>
+                                    <p class="home-main-info">I've got a unique mix of experiences - from playing Divison 3 football and competing in golf to spending over 12 years working in a gym. Before becoming a personal trainer, I worked in investments and did freelance web development and copywriting. All of these experiences shape my holistic approach to training, focusing on both physical and mental well-being to help my clients succeed.</p>
                                     <div class="home-divider"></div>
-                                    <h3 class="home-section-title">my services</h3>
+                                    <h3 class="home-section-title">Transform Your Habits and Strength</h3>
                                     <div class="home-services">
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b26-80cb251f" class="home-services-card">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/629790b4c074fa3b9e428c12_Icon-dev-1.svg" loading="lazy" alt="icon" class="image"/>
-                                            <h5 class="text-white">development</h5>
-                                            <p>Building a custom tailored solution based on your technical specification.</p>
+                                            <h5 class="text-white"> We Take Action Together</h5>
+                                            <p>No more just talking about change—every session is geared toward putting plans into action. I'll help you tackle your goals head-on, ensuring that you're making real progress every step of the way.</p>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b2c-80cb251f" class="home-services-card">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/629791c8ef43ef30384de0ff_Icon-rocket-1.svg" loading="lazy" alt="icon" class="image"/>
-                                            <h5 class="text-white">SEO optimization</h5>
-                                            <p>Audit your website, perform technical improvements and write meta tags</p>
+                                            <h5 class="text-white">Strengthen Body and Mind</h5>
+                                            <p>We'll work on building your physical strength while also addressing the mental and emotional challenges that hold you back. My approach is holistic, helping you become stronger inside and out.</p>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b32-80cb251f" class="home-services-card">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/629791c877a862e06c90e658_Icon-data-1.svg" loading="lazy" alt="icon" class="image"/>
-                                            <h5 class="text-white">data base</h5>
-                                            <p>SSL certificate installation and configuration, redirection configuration on your website</p>
+                                            <h5 class="text-white"> Equip Yourself for Independence</h5>
+                                            <p>I'm not here to keep you as a client forever; I'm here to give you the tools to succeed on your own. Together, we'll build lasting habits so you can confidently continue your fitness journey independently.</p>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b38-80cb251f" class="home-services-card">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/629791c52a46d66b1ac51fb5_Icon-shield-1.svg" loading="lazy" alt="icon" class="image"/>
-                                            <h5 class="text-white">data security</h5>
-                                            <p>Strategy with leading data protection technology to safeguard your critical data.</p>
+                                            <h5 class="text-white">A Plan Built for You</h5>
+                                            <p>Your goals, your life, your plan. We'll create a strategy that fits you perfectly, ensuring you have the support and guidance you need to make lasting changes.</p>
                                         </div>
                                     </div>
                                     <div class="home-divider"></div>
                                     <h3 class="home-section-title">my pricing</h3>
                                     <div class="home-pricing">
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b42-80cb251f" class="home-pricing-card">
-                                            <h5 class="text-white">basic</h5>
+                                            <h5 class="text-white">30min</h5>
                                             <div class="home-price-wrapper">
                                                 <div class="home-price-currency">$</div>
                                                 <div class="home-price">
-                                                    <span class="price-span">29</span>
-                                                    /hour<br/>
+                                                    <span class="price-span">45</span>
+                                                    /session<br/>
                                                 </div>
                                             </div>
                                             <ul role="list" class="list-home-pricing">
-                                                <li class="list-item-home active-item">consulting</li>
-                                                <li class="list-item-home">development</li>
-                                                <li class="list-item-home">optimisation</li>
-                                                <li class="list-item-home">24/7 support</li>
+                                                <li class="list-item-home active-item">in person</li>
+                                                <li class="list-item-home">online</li>
+                                                <li class="list-item-home">behavioral</li>
+                                                <li class="list-item-home"></li>
                                             </ul>
-                                            <a href="mailto:example@mail.com" class="outline-button w-button">Choose Plan</a>
+                                            <a href="mailto:fitness@ttinsley.dev" class="outline-button w-button">Choose Plan</a>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b5b-80cb251f" class="home-pricing-card">
-                                            <h5 class="text-white">advanced</h5>
+                                            <h5 class="text-white">1HR</h5>
                                             <div class="home-price-wrapper">
                                                 <div class="home-price-currency">$</div>
                                                 <div class="home-price">
-                                                    <span class="price-span">39</span>
-                                                    /hour<br/>
+                                                    <span class="price-span">75</span>
+                                                    /session<br/>
                                                 </div>
                                             </div>
                                             <ul role="list" class="list-home-pricing">
-                                                <li class="list-item-home active-item">consulting</li>
-                                                <li class="list-item-home active-item">development</li>
-                                                <li class="list-item-home">optimisation</li>
-                                                <li class="list-item-home">24/7 support</li>
+                                                <li class="list-item-home active-item">in person</li>
+                                                <li class="list-item-home active-item">online</li>
+                                                <li class="list-item-home">behavioral</li>
+                                                <li class="list-item-home">personal training</li>
                                             </ul>
                                             <a href="mailto:example@mail.com" class="outline-button w-button">Choose Plan</a>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b74-80cb251f" class="home-pricing-card">
-                                            <h5 class="text-white">premium</h5>
+                                            <h5 class="text-white">Plan</h5>
                                             <div class="home-price-wrapper">
                                                 <div class="home-price-currency">$</div>
                                                 <div class="home-price">
-                                                    <span class="price-span">99</span>
-                                                    /hour<br/>
+                                                    <span class="price-span">150</span>
+                                                    /plan<br/>
                                                 </div>
                                             </div>
                                             <ul role="list" class="list-home-pricing">
-                                                <li class="list-item-home active-item">consulting</li>
-                                                <li class="list-item-home active-item">development</li>
-                                                <li class="list-item-home active-item">optimisation</li>
-                                                <li class="list-item-home active-item">24/7 support</li>
+                                                <li class="list-item-home active-item">online</li>
+                                                <li class="list-item-home active-item">personal training</li>
+                                                <li class="list-item-home active-item"></li>
+                                                <li class="list-item-home active-item"></li>
                                             </ul>
                                             <a href="mailto:example@mail.com" class="outline-button w-button">Choose Plan</a>
                                         </div>
                                     </div>
                                     <div class="home-divider"></div>
-                                    <h3 class="home-section-title">principal facts</h3>
+                                    <h3 class="home-section-title">Certification</h3>
                                     <div class="home-facts">
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b91-80cb251f" class="home-facts-card">
-                                            <div class="home-facts-counter">124</div>
-                                            <div class="home-facts-subtitle">successful projects</div>
+                                            <div class="home-facts-counter">3/3/23</div>
+                                            <div class="home-facts-subtitle">NCEP Certifide Personal Traininer</div>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b96-80cb251f" class="home-facts-card">
-                                            <div class="home-facts-counter">89</div>
-                                            <div class="home-facts-subtitle">happy clients</div>
+                                            <div class="home-facts-counter">5/20/23</div>
+                                            <div class="home-facts-subtitle">NASM Golf Specialist</div>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b9b-80cb251f" class="home-facts-card">
-                                            <div class="home-facts-counter">18</div>
-                                            <div class="home-facts-subtitle">awards won</div>
+                                            <div class="home-facts-counter">6/5/23</div>
+                                            <div class="home-facts-subtitle">Land to Water Certification</div>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657ba0-80cb251f" class="home-facts-card">
-                                            <div class="home-facts-counter">23</div>
-                                            <div class="home-facts-subtitle">keyboards broken</div>
+                                            <div class="home-facts-counter">1/8/24</div>
+                                            <div class="home-facts-subtitle">NASM Behavioral Change Specialist</div>
                                         </div>
                                     </div>
                                     <div class="home-divider"></div>
-                                    <h3 class="home-section-title">my clients</h3>
-                                    <div class="home-clients">
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657ba9-80cb251f" class="home-clients-logo-wrapper">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6292458ea6c9180042cb2545_Clients-5.png" loading="lazy" id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657baa-80cb251f" alt="logo" class="client-logo"/>
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bab-80cb251f" class="home-clients-logo-wrapper">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6292458ea6c9184633cb2543_Clients-6.png" loading="lazy" id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bac-80cb251f" alt="logo" class="client-logo"/>
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bad-80cb251f" class="home-clients-logo-wrapper">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6292458ea6c9186d37cb2548_Clients-3.png" loading="lazy" id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bae-80cb251f" alt="logo" class="client-logo"/>
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657baf-80cb251f" class="home-clients-logo-wrapper">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6292458ea6c918374fcb2544_Clients-4.png" loading="lazy" id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb0-80cb251f" alt="logo" class="client-logo"/>
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb1-80cb251f" class="home-clients-logo-wrapper">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6292458ea6c9189510cb2549_Clients-2.png" loading="lazy" id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb2-80cb251f" alt="logo" class="client-logo"/>
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb3-80cb251f" class="home-clients-logo-wrapper">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6292458ea6c918780fcb253f_Clients-1.png" loading="lazy" id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb4-80cb251f" alt="logo" class="client-logo"/>
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb5-80cb251f" class="home-clients-logo-wrapper">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6292458ea6c9180042cb2545_Clients-5.png" loading="lazy" id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb6-80cb251f" alt="logo" class="client-logo"/>
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb7-80cb251f" class="home-clients-logo-wrapper">
-                                            <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6292458ea6c9184633cb2543_Clients-6.png" loading="lazy" id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657bb8-80cb251f" alt="logo" class="client-logo"/>
+                                    <h3 class="home-section-title">Client Reviews</h3>
+                                    <div class="testimonials-container">
+                                        <div class="testimonials-wrapper">
+                                            <!-- Testimonial 1 -->
+                                            <div class="testimonial-item">
+                                                <p>"While taking a break from running due to a sports injury, I decided to train with Terrell to gain strength. <br>Terrell really took the time to listen to my needs and goals as well as concerns about reinjury. <br>He proved knowledgeable, caring, and extremely motivating. <br>Our sessions left me feeling stronger and sometimes breathless in a good way. <br>The workouts were fun, fast moving, and really effective. <br>I am so glad I signed up with such a great individual who catered to my limitations."</p>
+                                                <cite>- Amy S.</cite>
+                                            </div>
+                                            <!-- Testimonial 2 -->
+                                            <div class="testimonial-item">
+                                                <p>"Terrell is one of the best trainers. <br>He is able to strike the balance between pushing someone and being compassionate. <br>He listens to the client and is always checking in to maintain client accountability. <br>He leads by example and pushes the client to be the best version of themself. <br>He listens to the clients needs and is always making adjustments to workouts and Marcos to gain the best results. <br>I would highly recommend Terrell for any type of client from novice to experienced."</p>
+                                                <cite>- Becky Bad Ass</cite>
+                                            </div>
+                                            <!-- Add more testimonials as needed -->
+                                            <div class="testimonial-item">
+                                                <p>"I started working with Terrell back in march and since that time he has helped me with my stamina, balance and weight. <br>He realized I had mobility limitations and developed a program that I could stick with. <br>I had previously tried a trainer but that person was too pushy. <br>Terrell is stern and will push you but he also listens. When I started I would walk in with a cane and now I use the cane much less and my mobility has greatly improved. <br>He has also helped me to understand how what I eat may affect my situation. I love to give him a hard time but really appreciate what he has done for me."</p>
+                                                <cite>- Lula (RIP)</cite>
+                                            </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
