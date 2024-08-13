@@ -87,12 +87,12 @@
                             <div class="tab-pane">
                                 <div class="tab-content-wrapper">
                                     <p>If you have any questions regarding this privacy statement, the practices of this site or your dealings with me, please do not hesitate to contact at the above-mentioned address, e-mail address or phone number.</p>
-                                    <div class="home-map-wrapper">
+                                    <!-- <div class="home-map-wrapper">
                                         <div class="map-preview-wrapper">
                                             <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6298d084ad802b3d81d365d9_Subtle%20Greyscale%20Map%20-%20Snazzy%20Maps%20-%20Free%20Styles%20for%20Google%20Maps%202022-06-02%2017-59-04%20(1).png" loading="lazy" sizes="(max-width: 767px) 80vw, (max-width: 991px) 54vw, 540px" srcset="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6298d084ad802b3d81d365d9_Subtle%20Greyscale%20Map%20-%20Snazzy%20Maps%20-%20Free%20Styles%20for%20Google%20Maps%202022-06-02%2017-59-04%20(1)-p-500.png 500w, https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6298d084ad802b3d81d365d9_Subtle%20Greyscale%20Map%20-%20Snazzy%20Maps%20-%20Free%20Styles%20for%20Google%20Maps%202022-06-02%2017-59-04%20(1).png 1299w" alt="map" class="map-preview"/>
                                         </div>
                                         <div class="main-map w-widget w-widget-map" data-widget-style="roadmap" data-widget-latlng="" aria-label="" data-enable-scroll="true" role="region" title="" data-enable-touch="true" data-widget-zoom="12" data-widget-tooltip=""></div>
-                                    </div>
+                                    </div> -->
                                     <div class="home-contact-grid">
                                         <div id="w-node-a0456082-bf5b-b5a2-ac75-f553c267f963-2199bc68" class="home-contact-item">
                                             <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/6298da2d568493427a841108_Icon-map-1.svg" loading="lazy" alt="icon" class="home-contact-icon"/>
@@ -129,6 +129,14 @@
                                             <input class="home-contact-text-field w-input" maxlength="256" name="name-3" data-name="Name 3" placeholder="first name" type="text" id="name-3" required=""/>
                                             <input class="home-contact-text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="second name" type="text" id="name-2" required=""/>
                                             <input class="home-contact-text-field w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="email" type="email" id="email-2" required=""/>
+                                            <input class="home-contact-text-field w-input" maxlength="10" name="phone" data-name="phone" placeholder="1234567890" type="tel" id="phone" required pattern="\d{10}" title="Phone number must be exactly 10 digits"/>
+                                            <div class="home-contact-text-field">
+                                                <span>Select your service:</span><br>
+                                                <label><input type="radio" id="personal-training" name="service" value="personal-training" required="">  Personal Training</label>
+                                                <label><input type="radio" id="behavioral-change-counseling" name="service" value="behavioral-change-counseling">  Behavioral Change Counseling</label>
+                                                <label><input type="radio" id="both" name="service" value="both">  Both</label>
+                                                <label><input type="radio" id="monthly-workouts" name="service" value="monthly-workouts">  Monthly Workouts</label>
+                                            </div>
                                             <textarea placeholder="message" maxlength="5000" id="Message-2" name="Message-2" required="" data-name="Message 2" class="home-contact-message-field w-input"></textarea>
                                             <input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Send Message"/>
                                         </form>
