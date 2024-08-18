@@ -28,3 +28,11 @@ the code to add new studies to the studies.html
     <h5 class="basic-information">My Opinion</h5>
     <p></p> <!-- write my opinion -->
 </div> <!-- END COPY and Paste -->
+
+
+
+the code for new reviews
+<div class="testimonial-item">
+    <p></p> <!-- Add what they said -->
+    <cite>-</cite> <!-- Add Name of Reviewer -->
+</div>
