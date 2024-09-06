@@ -19,43 +19,88 @@
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
         <style>
+            /* Container for circles */
             .testimonials-container {
-                overflow: hidden;
-                height: 200px;
-                width: 100%;
-                position: relative;
-            }
-    
-            .testimonials-wrapper {
                 display: flex;
-                flex-direction: column;
-                height: auto;
-                animation: scroll 25s linear infinite;
-            }
-    
-            .testimonial-item {
-                position: relative;
-                padding: 10px 20px;
-                margin-bottom: 20px;
-                box-sizing: border-box;
-                background: #000000; /* backgroud color for visibbility*/
-                border: 3px solid #D7BCE8; /* bborder for visibbility*/
-                border-radius: 20px;
-                line-height: 2px;
+                justify-content: center; /* Center circles horizontally */
+                align-items: center; /* Center items vertically */
+                flex-wrap: wrap; /* Allows wrapping if necessary */
+                max-width: 1000px; /* Maximum width of the container */
+                margin: 0 auto; /* Center container horizontally on the page */
+                padding: 20px; /* Padding around the container */
+                position: relative; /* For positioning info */
             }
 
-            .testimonial-item cite {
-                position: absolute;
-                bottom: 10px; /* distance from the bottom */
-                right: 10px; /* distance from the right */
-                font-style: italic;
-                color: #f7f3f3; /* review name text color */
+            /* Each testimonial item */
+            .testimonial-item {
+                position: relative;
+                width: 100px; /* Width of the circle */
+                height: 100px; /* Height of the circle */
+                margin: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
             }
-    
-            @keyframes scroll {
-                0% { transform: translateY(100%); }
-                100% { transform: translateY(-100%); }
-            } 
+
+            /* Circle styling */
+            .circle {
+                width: 80px; /* Diameter of the circle */
+                height: 80px; /* Diameter of the circle */
+                background: #ffffff; /* Circle color */
+                color: #d62222; /* Text color */
+                border-radius: 50%; /* Makes it a circle */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px; /* Font size for the circle name */
+                text-align: center;
+                transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .circle:hover {
+                
+                animation: pulse 1s infinite;
+                box-shadow: 0px 0px 15px rgba(254, 0, 0, 0.3);
+            }
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                    background: #f0f0f0;
+                }
+                50% {
+                    transform: scale(1.1);
+                    background: #e0e0e0;
+                }
+                100% {
+                    transform: scale(1);
+                    background: #f0f0f0;
+                }
+            }
+
+            /* Info container */
+            .info {
+                display: none; /* Hidden by default */
+                position: fixed; /* Position fixed to the viewport */
+                top: 50%; /* Center vertically */
+                left: 50%; /* Center horizontally */
+                transform: translate(-50%, -50%); /* Adjust position to center */
+                width: 80vw; /* Width of the info box */
+                max-width: 600px; /* Maximum width of the info box */
+                background: rgba(0, 0, 0, 0.9); /* Dark background with transparency */
+                color: #fff; /* Text color */
+                text-align: center;
+                padding: 20px;
+                box-sizing: border-box;
+                border-radius: 10px; /* Rounded corners */
+                z-index: 9999; /* Ensure it appears above other content */
+            }
+
+            /* Show info on hover */
+            .testimonial-item:hover .info {
+                display: block; /* Show info on hover */
+            }
+
         </style>
         <script type="text/javascript">
             WebFont.load({
@@ -206,7 +251,7 @@
                                             <!-- <a href="mailto:example@mail.com" class="outline-button w-button">Choose Plan</a> -->
                                         </div>
                                     </div>
-                                    <p class="basic-information">Fill out the contact form to discuss the best pricing option for you.</p>
+                                    <p class="basic-information">** All in-person personal training is conducted at American Family Fitness - Mechanicsville and requires a gym membership. **</p>
                                     <div class="home-divider"></div>
                                     <h3 class="home-section-title">Certification</h3>
                                     <div class="home-facts">
@@ -230,28 +275,32 @@
                                     <div class="home-divider"></div>
                                     <h3 class="home-section-title">Client Reviews</h3>
                                     <div class="testimonials-container">
-                                        <div class="testimonials-wrapper">
-                                            <!-- Testimonial 1 -->
-                                            <div class="testimonial-item">
+                                        <div class="testimonial-item">
+                                            <div class="circle">Amy S.</div>
+                                            <div class="info">
                                                 <p>"While taking a break from running due to a sports injury, I decided to train with Terrell to gain strength. <br>Terrell really took the time to listen to my needs and goals as well as concerns about reinjury. <br>He proved knowledgeable, caring, and extremely motivating. <br>Our sessions left me feeling stronger and sometimes breathless in a good way. <br>The workouts were fun, fast moving, and really effective. <br>I am so glad I signed up with such a great individual who catered to my limitations."</p>
-                                                <cite>- Amy S.</cite>
                                             </div>
-                                            <!-- Testimonial 2 -->
-                                            <div class="testimonial-item">
+                                        </div>
+                                        <div class="testimonial-item">
+                                            <div class="circle">Becky Bad Ass</div>
+                                            <div class="info">
                                                 <p>"Terrell is one of the best trainers. <br>He is able to strike the balance between pushing someone and being compassionate. <br>He listens to the client and is always checking in to maintain client accountability. <br>He leads by example and pushes the client to be the best version of themself. <br>He listens to the clients needs and is always making adjustments to workouts and Marcos to gain the best results. <br>I would highly recommend Terrell for any type of client from novice to experienced."</p>
-                                                <cite>- Becky Bad Ass</cite>
                                             </div>
-                                            <!-- Add more testimonials as needed -->
-                                            <div class="testimonial-item">
-                                                <p>"I started working with Terrell back in march and since that time he has helped me with my stamina, balance and weight. <br>He realized I had mobility limitations and developed a program that I could stick with. <br>I had previously tried a trainer but that person was too pushy. <br>Terrell is stern and will push you but he also listens. When I started I would walk in with a cane and now I use the cane much less and my mobility has greatly improved. <br>He has also helped me to understand how what I eat may affect my situation. I love to give him a hard time but really appreciate what he has done for me."</p>
-                                                <cite>- Lula (RIP)</cite>
+                                        </div>
+                                        <div class="testimonial-item">
+                                            <div class="circle">Lula (RIP)</div>
+                                            <div class="info">
+                                                <p>"I started working with Terrell back in March and since that time he has helped me with my stamina, balance, and weight. <br>He realized I had mobility limitations and developed a program that I could stick with. <br>I had previously tried a trainer but that person was too pushy. <br>Terrell is stern and will push you but he also listens. When I started I would walk in with a cane and now I use the cane much less and my mobility has greatly improved. <br>He has also helped me to understand how what I eat may affect my situation. I love to give him a hard time but really appreciate what he has done for me."</p>
                                             </div>
-                                            <div class="testimonial-item">
-                                                <p>Title: Shoulder to Shoulder<br>Once upon a time, in the town of Mechanicsville nestled in the picturesque countryside, there lived a remarkable personal trainer named Terrell. His dedication and passion for helping others achieve their fitness goals were unparalleled. Among his many clients was a determined individual named Storm, who had recently undergone extensive shoulder surgery.<br><br> My shoulder had been a constant source of pain and discomfort. After the surgery, I was left feeling helpless, my dreams of an active lifestyle seemingly shattered. However, fate had a different plan in store for me, as Terrell entered my life like a beacon of hope.<br><br>From the moment I walked into Terrell's office, a sense of reassurance washed over me. Terrell's warm smile and genuine concern for my well-being made me feel understood and supported. With every conversation, it became clear that Terrell possessed not only the expertise but also the empathy necessary to aid me on the road to recovery.<br><br>Terrell's training sessions were nothing short of transformative. He devised a customized program that targeted my weakened shoulder, focusing on gentle exercises and movements that would gradually rebuild strength and mobility. He patiently explained each exercise, providing detailed instructions and demonstrating the proper form to prevent any further injury.<br><br>But Terrell's assistance extended beyond my physical training. He understood the emotional toll that surgeries and setbacks could take on a person's spirit. During moments when doubt crept into my mind, Terrell offered unwavering encouragement, reminding me that progress takes time and setbacks were merely stepping stones toward success.</p> 
-                                                <cite>- Strom</cite> 
+                                        </div>
+                                        <div class="testimonial-item">
+                                            <div class="circle">Storm</div>
+                                            <div class="info">
+                                                <p>"Title: Shoulder to Shoulder<br>Once upon a time, in the town of Mechanicsville nestled in the picturesque countryside, there lived a remarkable personal trainer named Terrell. His dedication and passion for helping others achieve their fitness goals were unparalleled. Among his many clients was a determined individual named Storm, who had recently undergone extensive shoulder surgery.<br><br> My shoulder had been a constant source of pain and discomfort. After the surgery, I was left feeling helpless, my dreams of an active lifestyle seemingly shattered. However, fate had a different plan in store for me, as Terrell entered my life like a beacon of hope.<br><br>From the moment I walked into Terrell's office, a sense of reassurance washed over me. Terrell's warm smile and genuine concern for my well-being made me feel understood and supported. With every conversation, it became clear that Terrell possessed not only the expertise but also the empathy necessary to aid me on the road to recovery.<br><br>Terrell's training sessions were nothing short of transformative. He devised a customized program that targeted my weakened shoulder, focusing on gentle exercises and movements that would gradually rebuild strength and mobility. He patiently explained each exercise, providing detailed instructions and demonstrating the proper form to prevent any further injury.<br><br>But Terrell's assistance extended beyond my physical training. He understood the emotional toll that surgeries and setbacks could take on a person's spirit. During moments when doubt crept into my mind, Terrell offered unwavering encouragement, reminding me that progress takes time and setbacks were merely stepping stones toward success."</p>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     
                                 </div>
                             </div>

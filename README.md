@@ -33,6 +33,8 @@ the code to add new studies to the studies.html
 
 the code for new reviews
 <div class="testimonial-item">
-    <p></p> <!-- Add what they said -->
-    <cite>-</cite> <!-- Add Name of Reviewer -->
+    <div class="circle"></div> <!-- their name -->
+    <div class="info">
+        <p></p> <!-- Add what they said -->
+    </div>
 </div>
