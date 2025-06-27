@@ -31,6 +31,48 @@
                 color: #989fa5;
             }
 
+            .ready-quiz-btn {
+                display: inline-block;
+                padding: 16px 36px;
+                background: linear-gradient(90deg, #326978 60%, #15374e 100%);
+                color: #f3ede3;
+                font-size: 1.15rem;
+                font-weight: 700;
+                border-radius: 10px;
+                text-decoration: none;
+                box-shadow: 0 3px 18px rgba(21,55,78,0.09);
+                letter-spacing: 0.03em;
+                transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+                position: relative;
+                overflow: hidden;
+            }
+            .ready-quiz-btn:after {
+                content: '';
+                position: absolute;
+                left: 0; top: 0; right: 0; bottom: 0;
+                background: rgba(152,159,165,0.09);
+                opacity: 0;
+                transition: opacity 0.23s;
+                border-radius: inherit;
+                pointer-events: none;
+            }
+            .ready-quiz-btn:hover, .ready-quiz-btn:focus {
+                transform: scale(1.07) translateY(-2px);
+                box-shadow: 0 8px 32px rgba(50,105,120,0.15);
+            }
+            .ready-quiz-btn:hover:after, .ready-quiz-btn:focus:after {
+                opacity: 1;
+                animation: bounce 0.4s;
+            }
+            @keyframes bounce {
+                0%   { transform: translateY(0);}
+                20%  { transform: translateY(-6px);}
+                40%  { transform: translateY(0);}
+                60%  { transform: translateY(-3px);}
+                80%  { transform: translateY(0);}
+                100% { transform: translateY(-1px);}
+            }
+
             .testimonials-container {
                 display: flex;
                 justify-content: center;
@@ -204,59 +246,51 @@
                                     </div>
                                     <div class="home-divider"></div>
                                     <h3 class="home-section-title">My Pricing</h3>
-                                    <div class="home-pricing">
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b42-80cb251f" class="home-pricing-card">
-                                            <h5 class="text-white">30min</h5>
-                                            <div class="home-price-wrapper">
+                                    <div data-w-id="53ff260c-dce4-c749-6e3b-4d3370a1adae" class="home-progress-bar-wrapper">
+                                        <div class="home-progress-bar">
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">25min Session</div>
+                                                <div class="home-price-wrapper">
                                                 <div class="home-price-currency">$</div>
                                                 <div class="home-price">
                                                     <span class="price-span">45</span>
                                                     /session<br/>
                                                 </div>
                                             </div>
-                                            <ul role="list" class="list-home-pricing">
-                                                <li class="list-item-home active-item">Behavioral</li>
-                                                <li class="list-item-home">Inperson</li>
-                                                <li class="list-item-home">Online</li>
-                                                <li class="list-item-home"></li>
-                                            </ul>
-                                            <!-- <a href="mailto:fitness@ttinsley.dev" class="outline-button w-button">Choose Plan</a> -->
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b5b-80cb251f" class="home-pricing-card">
-                                            <h5 class="text-white">1HR</h5>
-                                            <div class="home-price-wrapper">
+                                                <p> Quick check-ins to stay on track and keep momentum. Perfect for ongoing clients who want focused accountability.</p>
+                                            </div>
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">50min Session</div>
+                                                <div class="home-price-wrapper">
                                                 <div class="home-price-currency">$</div>
                                                 <div class="home-price">
                                                     <span class="price-span">75</span>
                                                     /session<br/>
                                                 </div>
                                             </div>
-                                            <ul role="list" class="list-home-pricing">
-                                                <li class="list-item-home active-item">Behavioral or Training</li>
-                                                <li class="list-item-home active-item">Inperson</li>
-                                                <li class="list-item-home">Online</li>
-                                                <li class="list-item-home"></li>
-                                            </ul>
-                                            <!-- <a href="mailto:example@mail.com" class="outline-button w-button">Choose Plan</a> -->
-                                        </div>
-                                        <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b74-80cb251f" class="home-pricing-card">
-                                            <h5 class="text-white">Plan</h5>
-                                            <div class="home-price-wrapper">
+                                                <p> The ideal session for building new habits and making real progress. Personalized support and strategies in every meeting.</p>
+                                            </div>
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">90min Session</div>
+                                                <div class="home-price-wrapper">
                                                 <div class="home-price-currency">$</div>
                                                 <div class="home-price">
-                                                    <span class="price-span">150</span>
+                                                    <span class="price-span">135</span>
                                                     /plan<br/>
                                                 </div>
                                             </div>
-                                            <ul role="list" class="list-home-pricing">
-                                                <li class="list-item-home active-item">Training</li>
-                                                <li class="list-item-home active-item">Online</li>
-                                                <li class="list-item-home active-item">2 Monthly Checkins</li>
-                                                <li class="list-item-home active-item"></li>
-                                            </ul>
-                                            <!-- <a href="mailto:example@mail.com" class="outline-button w-button">Choose Plan</a> -->
+                                                <p> For deep dives and major breakthroughs. Extra time to explore challenges, reset, and set a strong foundation for change.</p>
+                                            </div>
+                                             <div class="home-progress-bar-item">
+                                                <div class="home-price-wrapper">
+                                                <div class="home-price-currency">Not sure which session is right for you?</div> 
+                                            </div>
+                                                <p> Take the free Readiness for Change Quiz to see where you are in your journey and get a personalized session recommendation.</p>
+                                                <a href="https://forms.gle/4Yu24JtPoveebttG6" target="_blank" rel="noopener noreferrer" class="ready-quiz-btn">Take the Readiness Quiz</a>
+                                            </div>
                                         </div>
                                     </div>
+
                                     <div class="home-divider"></div>
                                     <h3 class="home-section-title">Certification</h3>
                                     <div class="home-facts">
