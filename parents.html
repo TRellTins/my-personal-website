@@ -79,6 +79,48 @@
             80%  { transform: scale(1.09) translateY(-4px);}
             100% { transform: scale(1.09) translateY(-1px);}
         }
+
+        .ready-quiz-btn {
+                display: inline-block;
+                padding: 16px 36px;
+                background: linear-gradient(90deg, #326978 60%, #15374e 100%);
+                color: #f3ede3;
+                font-size: 1.15rem;
+                font-weight: 700;
+                border-radius: 10px;
+                text-decoration: none;
+                box-shadow: 0 3px 18px rgba(21,55,78,0.09);
+                letter-spacing: 0.03em;
+                transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+                position: relative;
+                overflow: hidden;
+            }
+            .ready-quiz-btn:after {
+                content: '';
+                position: absolute;
+                left: 0; top: 0; right: 0; bottom: 0;
+                background: rgba(152,159,165,0.09);
+                opacity: 0;
+                transition: opacity 0.23s;
+                border-radius: inherit;
+                pointer-events: none;
+            }
+            .ready-quiz-btn:hover, .ready-quiz-btn:focus {
+                transform: scale(1.07) translateY(-2px);
+                box-shadow: 0 8px 32px rgba(50,105,120,0.15);
+            }
+            .ready-quiz-btn:hover:after, .ready-quiz-btn:focus:after {
+                opacity: 1;
+                animation: bounce 0.4s;
+            }
+            @keyframes bounce {
+                0%   { transform: translateY(0);}
+                20%  { transform: translateY(-6px);}
+                40%  { transform: translateY(0);}
+                60%  { transform: translateY(-3px);}
+                80%  { transform: translateY(0);}
+                100% { transform: translateY(-1px);}
+            }
        </style>
         <script type="text/javascript">
             WebFont.load({
@@ -161,58 +203,74 @@
                                           <img src="/images/fox.png" alt="traders">
                                         </a>
                                       </div>
-                                    <div class="page-title" style="font-size: 40px;">Personal Training</div>
+                                    <div class="page-title" style="font-size: 40px;">Why Change Feels So Hard</div>
                                     <div class="basic-information-wrapper">
-                                        <div class="basic-information">Why I became a traininer</div>
+                                        <div class="basic-information">Parenting Isn’t the Problem—Patterns Are</div>
                                     </div>
-                                    <p class="home-main-info">I became a trainer because I saw firsthand how working out does more than just change your body—it transforms your mind. Exercise isn’t just about losing weight or building muscle; it’s about feeling better in every aspect of your life. When you move your body, you boost your mood, clear your mind, and build resilience. It’s a way to take control of your health, both physically and mentally. I’m here to help you not only reach your fitness goals but also to help you adopt habits that make you feel stronger, more confident, and more in control of your life.</p>
+                                    <p class="home-main-info">Parenting comes with a million pressures. If you feel stuck in old routines, overwhelmed, or like you’re just repeating what you grew up with, you’re not alone. Most parents struggle because of hidden patterns—not a lack of love or effort.</p>
                                     <div class="home-divider"></div>
-                                    <div class="page-title" style="font-size: 40px;">What to Expect</div> <!-- change this to something different -->
+
+                                    <div class="page-title" style="font-size: 40px;">Why Behavior Matters</div>
                                     <div class="basic-information-wrapper">
-                                        <div class="basic-information">Your 1-on-1 Training Journey with Me</div>                                        
+                                        <div class="basic-information">Small Shifts, Big Relief</div>
+                                    </div>
+                                    <p class="home-main-info">Change happens in the day-to-day moments, not just big decisions. I help parents spot the habits, triggers, and emotional cycles that quietly shape family life. When you shift your patterns, everything else gets easier—less guilt, fewer power struggles, more peace at home.</p>
+                                    <div class="home-divider"></div>
+
+                                    <div class="page-title" style="font-size: 40px;">What to Expect</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">Real Support, No Judgment</div>
+                                    </div>
+                                    <p class="home-main-info">Every family is different. That’s why every session is tailored to what matters most to you. We’ll work together to break old cycles, build healthier routines, and create space for the parent you want to be—no lectures, just honest, practical support.</p>
+                                    <div class="home-divider"></div>
+                                    <div class="page-title" style="font-size: 40px;">The Owl</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">Wisdom for Real Life</div>                                        
+                                    </div>
+                                    <p class="home-main-info">The owl is your symbol here—a reminder that wisdom, calm, and growth are possible, even in chaos. My approach helps you tap into your strengths and lead your family with patience and clarity.</p>
+                                    <div class="home-divider"></div>
+                                    <div class="page-title" style="font-size: 40px;">Common Struggles</div> <!-- change this to something different -->
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">You’re Not Alone</div>                                        
                                     </div>
                                     <div data-w-id="53ff260c-dce4-c749-6e3b-4d3370a1adae" class="home-progress-bar-wrapper">
                                         <div class="home-progress-bar">
                                             <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Safety Comes First:</div>
-                                                <p>  I'll ensure your movements are safe and injury-free, so you can confidently explore your limits and reach new heights.</p>
+                                                <div class="home-progress-bar-title">Repeating Generational Habits</div>
+                                                <p>Falling into the same routines or reactions you experienced growing up, even when you want to do things differently</p>
                                             </div>
                                             <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Staying healthy for the long term:</div>
-                                                <p> We'll build a plan that suits your body, preventing any chances of injuries. We'll strengthen you while keeping you in top shape.</p>
+                                                <div class="home-progress-bar-title">Guilt-Driven Decisions</div>
+                                                <p>Letting guilt about work, time, or past mistakes shape your choices with your kids.</p>
                                             </div>
                                             <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Getting Stronger:</div>
-                                                <p> We'll unlock your hidden strength. Sessions start easy and progressively intensify, not only making your body stronger but also boosting your mental resilience. Confidence will become your new norm.</p>
+                                                <div class="home-progress-bar-title">All-or-Nothing Thinki</div>
+                                                <p> Feeling like you have to be the “perfect” parent or you’re failing—no in-between.</p>
                                             </div>
                                             <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Made Just for You:</div>
-                                                <p> You're unique, and our sessions will reflect that. We'll talk about your goals and current fitness level. I'll adjust our approach based on how you feel, making sure every step aligns perfectly with you.</p>
+                                                <div class="home-progress-bar-title">Emotional Reactivity</div>
+                                                <p> Reacting out of stress, frustration, or overwhelm, instead of responding calmly and intentionally.</p>
                                             </div>
                                             <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Nutrition for Success:</div>
-                                                <p> We'll also dive into how you eat. Your nutrition plays a key role in your journey. Together, we'll explore better eating habits that support your goals.</p>
+                                                <div class="home-progress-bar-title">Putting Yourself Last</div>
+                                                <p>Always prioritizing everyone else’s needs, leaving no space for your own well-being or self-care.</p>
                                             </div>
                                             <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Behavioral Changes:</div>
-                                                <p> Beyond exercises and diets, we’ll explore habits that'll help you achieve your goals. We will discover habits that seamlessly integrate into your daily life.</p>
+                                                <div class="home-progress-bar-title">Avoiding Difficult Conversations</div>
+                                                <p>Dodging tough talks or setting boundaries because you want to keep the peace or fear conflict.</p>
                                             </div>
                                             <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Facing Challenges:</div>
-                                                <p> Growth happens when we tackle challenges. We'll embrace new experiences together, pushing through those tough moments.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Your Success is My Goal:</div>
-                                                <p> Above all, your success drives me. It's not just about physical achievements – it's about how far you've come and the hurdles you've conquered. Your success is my greatest reward.</p>
+                                                <div class="home-progress-bar-title">These patterns are super common—and totally normal. The good news? Once you spot them, you can start making small shifts that add up to big changes for you and your family.</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="home-divider"></div>
-                                    <div class="page-title" style="font-size: 40px;">Finding Your Fit</div>
+                                    <div class="page-title" style="font-size: 40px;">Ready for Change?</div>
                                     <div class="basic-information-wrapper">
-                                        <div class="basic-information">The Trainer for You, or Not</div>                                        
+                                        <div class="basic-information">Find the Pattern Holding You Back</div>                                        
                                     </div>
-                                    <p class="home-main-info">I’m not the trainer for everyone—and that’s okay. If you’re looking for someone to push you into bodybuilding or intense competitions, I might not be the right fit. But if you’re seeking a coach who understands the importance of balance, who values your health over extremes, and who wants to help you move and feel better in your everyday life, then I’m here for you. I also have a life outside of the gym, and I get that you do too. My approach is about creating a sustainable, enjoyable path to fitness that fits your unique goals and lifestyle, without taking over your life.</p>
+                                    <p class="home-main-info">Curious what’s really driving your family stress? Take a quick self-check on the 6 parenting patterns that quietly shape your days. Click below for insight and your next step—change starts with awareness.</p>
+                                    <a href="https://forms.gle/vEvNJCdc4iP3eSoV8" target="_blank" rel="noopener noreferrer" class="ready-quiz-btn">Ready to see your patterns?</a>
                                 </div>
                             </div>
                         </div>
