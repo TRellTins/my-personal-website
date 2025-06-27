@@ -73,6 +73,38 @@
                 100% { transform: translateY(-1px);}
             }
 
+            .home-services-card img {
+                display: block;
+                margin: 0 auto;
+                border-radius: 50%;
+                background: transparent;
+                box-shadow: 0 0 0 0 rgba(50,105,120,0.0), 0 3px 18px rgba(50,105,120,0.09);
+                transition: 
+                    box-shadow 0.18s,
+                    transform 0.18s cubic-bezier(.4,2,.6,1);
+                padding: 18px; /* keeps the circle effect, but you can tweak or remove if you want a tighter fit */
+            }
+
+                /* Bounce + color glow on hover/focus */
+            .home-services-card a:hover img,
+            .home-services-card a:focus img {
+                transform: scale(1.09) translateY(-6px);
+                box-shadow:
+                    0 0 0 10px rgba(50, 105, 120, 0.13),    /* #326978 blue glow */
+                    0 0 0 22px rgba(152, 159, 165, 0.09),   /* #989fa5 outer glow */
+                    0 8px 32px rgba(21, 55, 78, 0.15);      /* #15374e shadow */
+                animation: bounce 0.4s;
+            }
+
+            @keyframes bounce {
+                0%   { transform: scale(1.09) translateY(0);}
+                20%  { transform: scale(1.12) translateY(-10px);}
+                40%  { transform: scale(1.09) translateY(-4px);}
+                60%  { transform: scale(1.10) translateY(-2px);}
+                80%  { transform: scale(1.09) translateY(-4px);}
+                100% { transform: scale(1.09) translateY(-1px);}
+            }      
+
             .testimonials-container {
                 display: flex;
                 justify-content: center;
@@ -219,29 +251,39 @@
                                 <div class="tab-content-wrapper">
                                     <h1 class="page-title">About Me</h1>
                                     <div class="basic-information-wrapper">
-                                        <div class="basic-information">34 years</div>
-                                        <div class="basic-information-divider">/</div>
-                                        <div class="basic-information">Mechanicsville, VA</div>
+                                        <div class="basic-information">Why I Coach Behavior Change—For Parents, Traders, and Anyone Ready for Real Growth</div>
                                     </div>
-                                    <p class="home-main-info">I've got a unique mix of experiences - from playing Divison 3 football and competing in golf to spending over 12 years working in a gym. Before becoming a personal trainer, I worked in investments and did freelance web development and copywriting. All of these experiences shape my holistic approach to training, focusing on both physical and mental well-being to help my clients succeed.</p>
+                                    <p class="home-main-info">Hey, I’m Terrell. For 13 years, I was deep in two worlds: day trading and personal training. I’ve seen firsthand how the same patterns—self-doubt, discipline struggles, and emotional habits—show up whether you’re in the gym or at the trading desk.<br><br>Most of my fitness clients were parents, and over time, I realized that it wasn’t just the workouts or meal plans that held people back. It was behaviors: the guilt, the time pressure, the feeling of “I should be doing better.” The same was true in trading—no matter how much I knew about the markets, it was my mindset and habits that made or broke my results.<br><br>That’s why I became a NASM-certified Behavioral Change Specialist. My passion is helping people—parents, traders, anyone who feels stuck—finally break those old cycles and build habits that last. I coach from experience, not just theory. I know what it’s like to feel overwhelmed, to start over, to want real change but not know where to start.<br><br>My approach is honest, non-judgmental, and 100% tailored to you. We’ll work together to uncover what’s really getting in your way and build a plan that fits your life. No quick fixes—just real talk, real support, and real progress.If you’re ready to move past old patterns and start seeing changes that stick, you’re in the right place. Let’s get to work—together.</p>
                                     <div class="home-divider"></div>
-                                    <h3 class="home-section-title">Transform Your Habits and Strength</h3>
+                                    <h3 class="home-section-title">What the Logos Mean</h3>
                                     <div class="home-services">
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b26-80cb251f" class="home-services-card">
-                                            <h5 class="text-white"> We Take Action Together</h5>
-                                            <p>No more just talking about change—every session is geared toward putting plans into action. I'll help you tackle your goals head-on, ensuring that you're making real progress every step of the way.</p>
+                                            <a href="/index.html">
+                                                <img src="images/allthree.png" alt="">
+                                            </a>    
+                                            <h5 class="text-white">A Holistic Approach to Change</h5>
+                                            <p>My main logo brings together the owl, phoenix, and fox—three symbols that represent the heart of my coaching. Change isn’t one-size-fits-all. It’s about wisdom, resilience, and adaptability working together, no matter what life throws at you. This is the foundation for every client I work with, whether you’re a parent, trader, or just ready for something new.</p>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b2c-80cb251f" class="home-services-card">
-                                            <h5 class="text-white">Strengthen Body and Mind</h5>
-                                            <p>We'll work on building your physical strength while also addressing the mental and emotional challenges that hold you back. My approach is holistic, helping you become stronger inside and out.</p>
+                                            <a href="/fitness.html">
+                                                <img src="images/fire.png" alt="">
+                                            </a>    
+                                            <h5 class="text-white">The Phoenix: Resilience & Renewal</h5>
+                                            <p>The phoenix stands for rising from setbacks—again and again. I use this symbol for my fitness clients and anyone who’s been knocked down by old habits or tough circumstances. It’s about starting fresh, building strength, and believing you can come back stronger—every single time.</p>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b32-80cb251f" class="home-services-card">
-                                            <h5 class="text-white"> Equip Yourself for Independence</h5>
-                                            <p>I'm not here to keep you as a client forever; I'm here to give you the tools to succeed on your own. Together, we'll build lasting habits so you can confidently continue your fitness journey independently.</p>
+                                            <a href="/parents.html">    
+                                                <img src="images/owl.png" alt="">
+                                            </a>    
+                                            <h5 class="text-white">The Owl: Wisdom for Parents</h5>
+                                            <p>The owl is a symbol of wisdom, patience, and seeing the bigger picture. For parents, this means breaking generational patterns, finding calm in the chaos, and trusting yourself—even when parenting feels impossible. My work with parents is about helping you tap into your own wisdom and lead your family with confidence.</p>
                                         </div>
                                         <div id="w-node-e9835f7f-4158-b9c1-eb1d-db9788657b38-80cb251f" class="home-services-card">
-                                            <h5 class="text-white">A Plan Built for You</h5>
-                                            <p>Your goals, your life, your plan. We'll create a strategy that fits you perfectly, ensuring you have the support and guidance you need to make lasting changes.</p>
+                                            <a href="/traders.html">
+                                                <img src="images/fox.png" alt="">
+                                            </a>    
+                                            <h5 class="text-white">The Fox: Adaptability for Traders</h5>
+                                            <p>The fox represents adaptability, quick thinking, and staying sharp—qualities every trader and investor needs. In coaching traders, I focus on helping you pivot, stay disciplined, and outsmart old habits that can sabotage your success. It’s about being flexible and always ready for the next move.</p>
                                         </div>
                                     </div>
                                     <div class="home-divider"></div>
