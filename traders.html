@@ -52,6 +52,55 @@
                 height: 100%;
                 border: 0;
             }
+
+            .logo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-row a {
+            display: inline-block;
+            border-radius: 50%;
+            transition: box-shadow 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+            padding: 0;
+        }
+
+        .logo-row img {
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+            background: transparent;
+            transition: box-shadow 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+            padding: 0;
+            display: block;
+        }
+
+        .logo-row img.current-page {
+            width: 200px;
+            transform: scale(1.2);
+        }
+
+        .logo-row a:hover img,
+        .logo-row a:focus img {
+            transform: scale(1.09) translateY(-6px);
+            box-shadow:
+                0 0 0 10px rgba(50, 105, 120, 0.13),    /* #326978 blue glow */
+                0 0 0 22px rgba(152, 159, 165, 0.09),   /* #989fa5 outer glow */
+                0 8px 32px rgba(21, 55, 78, 0.15);
+            animation: bounce 0.4s;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%   { transform: scale(1.09) translateY(0);}
+            20%  { transform: scale(1.12) translateY(-10px);}
+            40%  { transform: scale(1.09) translateY(-4px);}
+            60%  { transform: scale(1.10) translateY(-2px);}
+            80%  { transform: scale(1.09) translateY(-4px);}
+            100% { transform: scale(1.09) translateY(-1px);}
+        }
         </style>
         <script type="text/javascript">
             WebFont.load({
@@ -120,6 +169,20 @@
                         <div class="home-tab-page">
                             <div class="tab-pane">
                                 <div class="tab-content-wrapper">
+                                    <div class="logo-row">
+                                        <a href="/index.html" aria-label="Go to Main Coaching Page">
+                                          <img src="/images/allthree.png" alt="main">
+                                        </a>
+                                        <a href="/fitness.html" aria-label="Go to Fitness Coaching Page">
+                                          <img src="/images/fire.png" alt="fitness">
+                                        </a>
+                                        <a href="/parents.html" aria-label="Go to Parents Coaching Page">
+                                          <img src="/images/owl.png" alt="parents">
+                                        </a>
+                                        <a href="/traders.html" aria-label="Go to Traders Coaching Page">
+                                          <img src="/images/fox.png" alt="traders" class="current-page">
+                                        </a>
+                                      </div>
                                     <div class="video-introduction">
                                         <p style="color: #ffffff">Watch the video below to learn more about how I can help you achieve your goals.</p>
                                         <div class="video-wrapper">
