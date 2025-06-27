@@ -80,6 +80,48 @@
             100% { transform: scale(1.09) translateY(-1px);}
         }
 
+        .ready-quiz-btn {
+                display: inline-block;
+                padding: 16px 36px;
+                background: linear-gradient(90deg, #326978 60%, #15374e 100%);
+                color: #f3ede3;
+                font-size: 1.15rem;
+                font-weight: 700;
+                border-radius: 10px;
+                text-decoration: none;
+                box-shadow: 0 3px 18px rgba(21,55,78,0.09);
+                letter-spacing: 0.03em;
+                transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+                position: relative;
+                overflow: hidden;
+            }
+            .ready-quiz-btn:after {
+                content: '';
+                position: absolute;
+                left: 0; top: 0; right: 0; bottom: 0;
+                background: rgba(152,159,165,0.09);
+                opacity: 0;
+                transition: opacity 0.23s;
+                border-radius: inherit;
+                pointer-events: none;
+            }
+            .ready-quiz-btn:hover, .ready-quiz-btn:focus {
+                transform: scale(1.07) translateY(-2px);
+                box-shadow: 0 8px 32px rgba(50,105,120,0.15);
+            }
+            .ready-quiz-btn:hover:after, .ready-quiz-btn:focus:after {
+                opacity: 1;
+                animation: bounce 0.4s;
+            }
+            @keyframes bounce {
+                0%   { transform: translateY(0);}
+                20%  { transform: translateY(-6px);}
+                40%  { transform: translateY(0);}
+                60%  { transform: translateY(-3px);}
+                80%  { transform: translateY(0);}
+                100% { transform: translateY(-1px);}
+            }
+
        </style>
        <script type="text/javascript">
             WebFont.load({
@@ -163,140 +205,50 @@
                                         </a>
                                       </div>
 
-                                    <div class="page-title" style="font-size: 40px;">Behavioral Change</div>
+                                    <div class="page-title" style="font-size: 40px;">Why Plans Fail</div>
                                     <div class="basic-information-wrapper">
-                                        <div class="basic-information">Future-Focused</div>
-                                        <div class="basic-information-divider">/</div>
-                                        <div class="basic-information">Feeling Valued</div>
-                                        <div class="basic-information-divider">/</div>
-                                        <div class="basic-information">Forward Momentum</div>
+                                        <div class="basic-information">It’s Not Just About Willpower</div>
                                     </div>
-                                    <p class="home-main-info">My approach is <b><i>Future-Focused, Not Past-Dwelling,</b></i> guiding you toward meaningful change and progress. I rely on <b><i>Feeling Valued, Not Just Talk</b></i> ensures that while your emotions are acknowledged, we also focus on actionable strategies to achieve real results. With <b><i>Forward Momentum, <br>Not Idle Talk,</b></i> I keep you actively engaged in your journey, focusing on <br>tangible outcomes rather than unproductive conversations.</p>
+                                    <p class="home-main-info">If you’ve ever felt like you “just can’t stick to it,” you’re not alone. Most fitness plans focus on the workouts and meal plans—but rarely on the habits, emotions, and life stress that actually drive your choices. Real talk: willpower alone isn’t enough when you’re juggling work, family, and everything else life throws at you. The truth is, lasting change starts with understanding your patterns, not blaming yourself for them.</p>
                                     <div class="home-divider"></div>
-                                    <div class="page-title" style="font-size: 40px;">Why I Care</div>
+                                    <div class="page-title" style="font-size: 40px;">Why Behavior matters</div>
                                     <div class="basic-information-wrapper">
-                                        <div class="basic-information">How my passion for psychology shapes my unique approach.</div>                                        
+                                        <div class="basic-information">Real Change Starts With Your Mindset</div>                                        
                                     </div>
-                                    <p class="home-main-info">My passion for human psychology emerged from conversations with those who experienced traditional therapy. I observed that many conventional approaches often didn't fully address individual needs. This insight inspired me to develop a more effective and personalized method. I believe that nurturing both a healthy mind and body is key to accelerating your growth and achieving lasting success. Unlike traditional therapy, where long-term dependency can sometimes develop, my goal is to equip you with the skills to improve yourself independently. My aim is to empower you to thrive on your own terms.</p>
-                                    <div class="home-divider"></div>
-                                    <div class="page-title" style="font-size: 40px;">What I am Not</div>
+                                    <p class="home-main-info">Fitness isn’t just physical—it’s deeply mental and emotional. My approach goes beyond sets and reps, helping you uncover the “why” behind your actions. Together, we tackle the thoughts, beliefs, and triggers that keep you stuck, so you can finally make progress that lasts. You’ll get practical tools, honest support, and real strategies for the moments when motivation fades or life gets messy.</p>
+                                    <div class="home-divider"></div>  
+                                    
+                                    <div class="page-title" style="font-size: 40px;">What to Expect</div>
                                     <div class="basic-information-wrapper">
-                                        <div class="basic-information">My services compared to traditional mental health support.</div>                                        
+                                        <div class="basic-information">Personalized, Judgment-Free Support</div>                                        
                                     </div>
-                                    <div data-w-id="53ff260c-dce4-c749-6e3b-4d3370a1adae" class="home-progress-bar-wrapper">
-                                        <div class="home-progress-bar">
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Licensed Therapist:</div>
-                                                <p> I am not a licensed mental health professional or therapist. My services are focused on behavioral change and personal development.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Substitute for Medical Advice:</div>
-                                                <p> My counseling does not replace medical advice or treatment from qualified healthcare providers.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Crisis Intervention Specialist:</div>
-                                                <p> I do not provide crisis intervention or emergency support. For immediate assistance, please contact emergency services or a crisis hotline.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Clinical Diagnosis Provider:</div>
-                                                <p>I do not diagnose or treat mental health disorders. My work is centered around behavioral change and personal growth.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Legal Advisor:</div>
-                                                <p>My services do not include legal advice or representation. For legal matters, consult a licensed attorney.</p>
-                                            </div>
-                                        </div>
+                                    <p class="home-main-info">Every client is different, and so is every coaching session. We’ll start by getting clear on your goals and what’s been getting in your way—no shame, no judgment. I’ll meet you where you are and help you build habits that fit your real life. Whether you need accountability, a mindset shift, or just someone in your corner, I’m here for it. This is a partnership, not a lecture.</p>
+                                    <div class="home-divider"></div>  
+
+                                    <div class="page-title" style="font-size: 40px;">Common Struggles</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">From All-or-Nothing to Consistency</div>                                        
                                     </div>
+                                    <p class="home-main-info">You’re not lazy or broken—just human. Here are some of the real-life challenges we’ll tackle together:</p>
+                                        <ul> 
+                                            <li>Behavioral eating</li>
+                                            <li>Motivation highs and lows</li>
+                                            <li>Breaking the “start/stop” cycle</li>
+                                            <li>Guilt and shame after setbacks</li>
+                                            <li>Overwhelm from trying to do it all</li>
+                                        </ul>
+                                    <P class="home-main-info">We’ll work through these, one step at a time, so you can finally see progress and feel good about it.</P> 
                                     <div class="home-divider"></div>
-                                    <div class="behavioral-change-quiz">
-                                        <h2 class="home-progress-bar-title">Inital Assessment</h2>
-                                        <p>Ready to make a change? Answer these questions to get a clear picture of where you stand and to streamline your initial assessment process. This will help us tailor our approach to your needs and set you on the path to success faster.</p>
-                                        <form target="_blank" action="https://formsubmit.co/fitness@ttinsley.dev" method="POST"> 
-                                            <!-- Initial Questions -->
-                                            <fieldset>
-                                                <legend class="basic-information">Initial Questions</legend>
-                                                <label for="change-behavior"><p>1. What behavior would you like to change?</p></label>
-                                                <textarea id="change-behavior" name="change_behavior" rows="1" cols="60" required></textarea>
-                                    
-                                                <label for="reason"><p>2. Why do you want to change this behavior?</p></label>
-                                                <textarea id="reason" name="reason" rows="1" cols="60" required></textarea>
-                                    
-                                                <label for="attempts"><p>3. Have you done anything to try to change that behavior?</p></label>
-                                                <textarea id="attempts" name="attempts" rows="1" cols="60" required></textarea>
-                                    
-                                                <label for="benefits"><p>4. How would your life benefit once you change that behavior?</p></label>
-                                                <textarea id="benefits" name="benefits" rows="1" cols="60" required></textarea>
-                                    
-                                                <label for="consequences"><p>5. What would your life be like if you never changed that behavior?</p></label>
-                                                <textarea id="consequences" name="consequences" rows="1" cols="60" required></textarea>
-                                            </fieldset>
-                                    
-                                            <!-- Self-Assessment Questions -->
-                                            <fieldset>
-                                                <legend class="basic-information" style="padding-top: 20px;">Self-Assessment Questions - Pick the answer that best fit</legend>
-                                                <label for="behavior-frequency"><P>1. How frequently do you engage in the behavior you want to change?</P></label>
-                                                <select id="behavior-frequency" name="behavior_frequency" required>
-                                                    <option value="N/A">-</option>
-                                                    <option value="Precontemplation">I haven’t thought much about how often I do it.</option>
-                                                    <option value="Contemplation">I notice I do it often, especially under stress.</option>
-                                                    <option value="Preperation">I’ve realized I do it daily, usually at a specific time.</option>
-                                                    <option value="Action">I used to do it daily, but now I do it less frequently.</option>
-                                                    <option value="Maintanice">I’ve minimized it and only do it occasionally.</option>
-                                                </select>
-                                    
-                                                <label for="imagery"><P>2. How can you envision your life improving if you successfully change this behavior?</P></label>
-                                                <select id="imagery" name="imagery" required>
-                                                    <option value="N/A">-</option>
-                                                    <option value="Precontemplation">I can't really picture what change would look like.</option>
-                                                    <option value="Contemplation">I occasionally think about how things might improve.</option>
-                                                    <option value="Preperation">I’m starting to visualize positive outcomes from this change.</option>
-                                                    <option value="Action">I see positive changes now that I’m actively working on it.</option>
-                                                    <option value="Maintanice">I regularly visualize the benefits to stay motivated.</option>
-                                                </select>
-                                    
-                                                <label for="cognition"><P>3. What benefits do you believe you’ll gain from changing this behavior?</P></label>
-                                                <select id="cognition" name="cognition" required>
-                                                    <option value="N/A">-</option>
-                                                    <option value="Precontemplation">I don’t see a need for change.</option>
-                                                    <option value="Contemplation">I think I could benefit, but it seems challenging.</option>
-                                                    <option value="Preperation">I’m confident I’ll gain benefits and am planning for it.</option>
-                                                    <option value="Action">I’m experiencing benefits now that I’ve started changing.</option>
-                                                    <option value="Maintanice">I’m seeing long-term benefits and maintaining my progress.</option>
-                                                </select>
-                                    
-                                                <label for="interpersonal"><P>4. Who can support you in making this change?</P></label>
-                                                <select id="interpersonal" name="interpersonal" required>
-                                                    <option value="N/A">-</option>
-                                                    <option value="Precontemplation">I haven’t discussed this with anyone.</option>
-                                                    <option value="Contemplation">I’ve started talking to close friends or family.</option>
-                                                    <option value="Preperation">I’ve identified people who will support me.</option>
-                                                    <option value="Action">My support network is actively helping me.</option>
-                                                    <option value="Maintanice">I frequently engage with my support network about my progress.</option>
-                                                </select>
-                                    
-                                                <label for="goal-setting"><P>5. What steps are you planning to take to achieve this change?</P></label>
-                                                <select id="goal-setting" name="goal_setting" required>
-                                                    <option value="N/A">-</option>
-                                                    <option value="Precontemplation">I don’t have any goals at this point.</option>
-                                                    <option value="Contemplation">I’m considering setting some goals.</option>
-                                                    <option value="Preperation">I’ve set specific goals and am creating a plan.</option>
-                                                    <option value="Action">I have a detailed plan and am working on my goals.</option>
-                                                    <option value="Maintanice">I’ve achieved my goals and am setting new ones to continue progress.</option>
-                                                </select>
-                                            </fieldset>
-                                    
-                                            <!-- Contact Information -->
-                                            <fieldset>
-                                                <legend class="basic-information" style="padding-top: 20px;">Contact Information</legend>
-                                                <label for="contact-info"><p>Please provide your email:</p></label>
-                                                <input type="text" id="contact-info" name="contact_info" placeholder="I’ll review your form and send you a calendar link and payment details." required style="width: 100%; max-width: 500px;">
-                                            </fieldset>
-                                    
-                                            <button type="submit" class="quiz-submit outline-button w-button" style="margin-top: 15px;">Submit</button>
-                                        </form>
+                                    <div class="page-title" style="font-size: 40px;">The Phoenix</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">Rise, Reset, Repeat</div>                                        
                                     </div>
-                                    
-                                    
+                                    <p class="home-main-info">The phoenix represents what I believe about fitness: it’s never too late to start again. Every setback is a chance to rise stronger, learn, and reset. You don’t have to be perfect—you just have to be willing to keep going. My coaching is here to help you bounce back, find your fire, and build a healthier, more resilient version of you.</p>
+                                    <div class="home-divider"></div>
+                                    <div class="page-title" style="font-size: 40px;">What Eating Behavior Is Sabotaging You?</div>
+                                    <p class="home-main-info">Struggling with eating? It’s often small habits—mindless snacking, eating from stress, or just routine—that get in the way. Want to know which ones are tripping you up?</p>
+                                    <p> Take a quick self-check on the 6 eating behaviors that quietly stall progress. You might spot something new—and finally know where to start.</p>
+                                    <a href="https://forms.gle/4C3CQr56PQnEGuwe9" target="_blank" rel="noopener noreferrer" class="ready-quiz-btn">Ready to see your patterns?</a>
                                 </div>
                             </div>
                         </div>
