@@ -30,43 +30,18 @@
             .home-progress-bar-title, .home-main-info {
                 color: #989fa5;
             }
-            .study-container {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 20px;
-            }
-            .study-card {
-                border: 1px solid #ddd;
-                padding: 10px;
-                width: 45%;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
-            .study-image {
-                max-width: 100%;
-                height: auto;
-            }
-            .study-title {
-                margin: 10px 0;
-                font-size: 1.2em;
-            }
-            .study-summary {
-                margin-bottom: 10px;
-            }
-            .study-button {
-                background-color: #007bff;
-                color: white;
-                padding: 10px;
-                text-align: center;
+            a {
+                color: #989fa5; /* or whatever your default link color is */
                 text-decoration: none;
-                border-radius: 5px;
-                display: inline-block;
+                transition: color 0.3s cubic-bezier(.4,0,.2,1), background 0.3s cubic-bezier(.4,0,.2,1);
             }
-            .study-button:hover {
-                background-color: #0056b3;
+            a:hover {
+                color: #326978; /* Your main brand teal /
+                background: #f3ede340; / Optional: adds a soft highlight on hover */
+                border-radius: 4px;
+                padding: 2px 6px;
             }
-            .opinion-section {
-                margin-top: 20px;
-            }
+
         </style>
         <script type="text/javascript">
             WebFont.load({
@@ -124,7 +99,7 @@
                             <a href="/traders.html" class="home-tab-link w-inline-block">
                                 <img src="images/fox.png" loading="lazy" alt="icon"/>
                             </a>
-                            <a href="/work-sheets.html" class="home-tab-link w-inline-block">
+                            <a href="/resources.html" class="home-tab-link w-inline-block">
                                 <img src="images/notebook.png" loading="lazy" alt="icon"/>
                             </a>
                             <a href="/index.html" aria-current="page" class="logo-nav w--current">TT</a>
@@ -135,67 +110,63 @@
                         <div class="home-tab-page">
                             <div class="tab-pane">
                                 <div class="tab-content-wrapper">
-                                    <div class="page-title" style="font-size: 40px;">What I am Not</div>
-                                    <div class="basic-information-wrapper">
-                                        <div class="basic-information">My services compared to traditional mental health support.</div>                                        
+                                    <div class="section" style="margin-top:2em;">
+                                      <div class="page-title" style="font-size: 40px; margin-bottom: 1em;">Insights and Resources</div>
+                                      
+                                      <!-- Fitness Blogs -->
+                                      <div class="basic-information-wrapper" style="margin-bottom: 0.5em;">
+                                        <div class="basic-information" style="font-size: 1.4em; font-weight: bold;">Fitness Blogs</div>
+                                      </div>
+                                      <ul style="margin-bottom: 1.5em; margin-left: 1.5em;">
+                                        <li><a href="https://yourfitnessblog1.com" target="_blank">How to Build Consistency in Your Workouts</a></li>
+
+                                      </ul>
+                                      <div class="home-divider" style="margin: 1.5em 0;"></div>
+                                      
+                                      <!-- Parent Blogs -->
+                                      <div class="basic-information-wrapper" style="margin-bottom: 0.5em;">
+                                        <div class="basic-information" style="font-size: 1.4em; font-weight: bold;">Parent Blogs</div>
+                                      </div>
+                                      <ul style="margin-bottom: 1.5em; margin-left: 1.5em;">
+                                        <li><a href="https://yourparentblog1.com" target="_blank">Healthy Habits for Busy Families</a></li>
+
+                                      </ul>
+                                      <div class="home-divider" style="margin: 1.5em 0;"></div>
+                                      
+                                      <!-- Trader Blogs -->
+                                      <div class="basic-information-wrapper" style="margin-bottom: 0.5em;">
+                                        <div class="basic-information" style="font-size: 1.4em; font-weight: bold;">Trader Blogs</div>
+                                      </div>
+                                      <ul style="margin-bottom: 1.5em; margin-left: 1.5em;">
+                                        <li><a href="https://yourtraderblog1.com" target="_blank">Staying Disciplined When Markets Get Wild</a></li>
+                                        
+                                      </ul>
+                                      
+                                      
+                                      <!-- Worksheets not sure if I want to give up the worksheets for free yet. 
+                                      <div class="basic-information-wrapper" style="margin-bottom: 0.5em;">
+                                        <div class="basic-information" style="font-size: 1.4em; font-weight: bold;">Worksheets</div>
+                                      </div>
+                                      <div style="margin-left: 1.5em;">
+                                        <strong style="color: #f3ede3;">Fitness Worksheets:</strong>
+                                        <ul style="margin-bottom: 1em;">
+                                          <li><a href="https://yourlink.com/fitness-boredom-eating.pdf" target="_blank">Boredom Eating Worksheet</a></li>
+                                          <li><a href="https://yourlink.com/fitness-mindless-eating.pdf" target="_blank">Mindless Eating Worksheet</a></li>
+                                        </ul>
+                                        <div class="home-divider" style="margin: 1.5em 0;"></div>
+                                        <strong style="color: #f3ede3;">Parent Worksheets:</strong>
+                                        <ul style="margin-bottom: 1em;">
+                                          <li><a href="https://yourlink.com/parents-family-habits.pdf" target="_blank">Family Habits Worksheet</a></li>
+                                        </ul>
+                                        <div class="home-divider" style="margin: 1.5em 0;"></div>
+                                        <strong style="color: #f3ede3;">Trader Worksheets:</strong>
+                                        <ul>
+                                          <li><a href="https://yourlink.com/trader-discipline.pdf" target="_blank">Trading Discipline Worksheet</a></li>
+                                        </ul>
+                                      </div>  -->
+                                        
                                     </div>
-                                    <div data-w-id="53ff260c-dce4-c749-6e3b-4d3370a1adae" class="home-progress-bar-wrapper">
-                                        <div class="home-progress-bar">
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Licensed Therapist:</div>
-                                                <p> I am not a licensed mental health professional or therapist. My services are focused on behavioral change and personal development.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Substitute for Medical Advice:</div>
-                                                <p> My counseling does not replace medical advice or treatment from qualified healthcare providers.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Crisis Intervention Specialist:</div>
-                                                <p> I do not provide crisis intervention or emergency support. For immediate assistance, please contact emergency services or a crisis hotline.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Clinical Diagnosis Provider:</div>
-                                                <p>I do not diagnose or treat mental health disorders. My work is centered around behavioral change and personal growth.</p>
-                                            </div>
-                                            <div class="home-progress-bar-item">
-                                                <div class="home-progress-bar-title">Not a Legal Advisor:</div>
-                                                <p>My services do not include legal advice or representation. For legal matters, consult a licensed attorney.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="home-divider"></div>
-                                    <div class="page-title" style="font-size: 40px;">Different Viewpoints on Mental and Physical Health</div>
-                                    <div class="basic-information-wrapper">
-                                        <div class="basic-information">Explore contrasting studies on mental and physical health to make informed choices about your well-being.</div>    <!-- I will update -->                                    
-                                    </div> 
-                                    <p class="home-main-info">On this page, you'll find two opposing studies that delve into various aspects of mental and physical health. Each study presents a unique perspective, allowing you to weigh different viewpoints and draw your own conclusions. At the bottom, I share my own opinion based on these studies to provide additional insight.</p>
-                                    <!-- NEW STUDIES GO DIRECTLY UNDER THIS LINE (FIND EASY COPY AND PASTE CODE IN THE README.md)-->
-                                    <div class="home-divider"></div> 
-                                    <div class="study-container"> 
-                                        <!-- Study 1 -->
-                                        <div class="study-card">
-                                            <img src="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8683455/bin/PAMJ-40-168-g001.jpg"  alt="Study 1" class="study-image"> 
-                                            <div class="study-title, basic-information">Effectiveness of life review on depression among elderly: a systematic review and meta-analysis</div> 
-                                            <p><strong>Date:</strong>  Nov 18, 2021</p> 
-                                            <p class="study-summary">This study examines the effectiveness of Cognitive Processing Therapy (CPT), which focuses on helping individuals reprocess and make sense of past traumatic events, in reducing symptoms of post-traumatic stress disorder (PTSD)</p>
-                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8683455/" class="study-button" target="_blank">Read Study 1</a>
-                                        </div>
-                                        <!-- Study 2 -->
-                                        <div class="study-card">
-                                            <img src="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6246690/bin/fpsyg-09-02211-g0001.jpg" alt="Study 2" class="study-image"> 
-                                            <div class="study-title, basic-information">The Efficacy of Metacognitive Therapy: A Systematic Review and Meta-Analysis</div> 
-                                            <p><strong>Date:</strong> Nov 14, 2018</p> 
-                                            <p class="study-summary">This study evaluates Metacognitive Therapy, which emphasizes future-focused strategies to manage thinking patterns and prevent psychological disorders like anxiety and depression.</p>
-                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6246690/" class="study-button" target="_blank">Read Study 2</a>
-                                        </div>
-                                    </div>
-                                    <!-- Opinion Section -->
-                                    <div class="opinion-section">
-                                        <h5 class="basic-information">My Opinion</h5>
-                                        <p>Both studies highlight the effectiveness of specific therapeutic approaches in addressing mental health issues. Metacognitive Therapy shows promise in treating a range of psychological conditions through cognitive processes, while life review therapy proves beneficial for reducing depression among the elderly by facilitating reflection and meaning-making. I find the evidence supporting life review therapy's impact on elderly depression particularly compelling, given its focus on enhancing emotional well-being in a vulnerable population.</p> 
-                                    </div> 
-                                    <div class="home-divider"></div> 
-                                </div>
+                                  </div>
                             </div>
                         </div>
                         
