@@ -53,6 +53,161 @@
                 animation: bounce 0.4s;
             }
 
+            .logo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-row a {
+            display: inline-block;
+            border-radius: 50%;
+            transition: box-shadow 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+            padding: 0;
+        }
+
+        .logo-row img {
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+            background: transparent;
+            transition: box-shadow 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+            padding: 0;
+            display: block;
+        }
+
+        .logo-row img.current-page {
+            width: 200px;
+            transform: scale(1.2);
+        }
+
+        .logo-row a:hover img,
+        .logo-row a:focus img {
+            transform: scale(1.09) translateY(-6px);
+            box-shadow:
+                0 0 0 10px rgba(50, 105, 120, 0.13),    /* #326978 blue glow */
+                0 0 0 22px rgba(152, 159, 165, 0.09),   /* #989fa5 outer glow */
+                0 8px 32px rgba(21, 55, 78, 0.15);
+            animation: bounce 0.4s;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%   { transform: scale(1.09) translateY(0);}
+            20%  { transform: scale(1.12) translateY(-10px);}
+            40%  { transform: scale(1.09) translateY(-4px);}
+            60%  { transform: scale(1.10) translateY(-2px);}
+            80%  { transform: scale(1.09) translateY(-4px);}
+            100% { transform: scale(1.09) translateY(-1px);}
+        }
+
+            .blog-section {
+                background: #22313a;
+                border-radius: 12px;
+                padding: 2em 1.5em;
+                margin-bottom: 2em;
+            }
+            .blog-category-filter {
+                text-align: left;
+                margin-bottom: 1.5em;
+            }
+            .blog-filter-btn {
+                background: #326978;
+                color: #f3ede3;
+                border: none;
+                border-radius: 5px;
+                margin-right: 0.5em;
+                margin-bottom: 0.5em;
+                padding: 0.5em 1.1em;
+                font-weight: 600;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background 0.2s, color 0.2s;
+                outline: none;
+            }
+            .blog-filter-btn:hover, .blog-filter-btn.active {
+                background: #f3ede3;
+                color: #326978;
+            }
+            .blog-post {
+                background: #29414c;
+                border-radius: 10px;
+                margin-bottom: 2em;
+                padding: 2em 1.5em;
+                color: #f3ede3;
+                box-shadow: 0 4px 20px rgba(50,105,120,0.10);
+                transition: box-shadow 0.2s;
+                position: relative;
+            }
+            .blog-post h2 {
+                color: #f3ede3;
+                margin-top: 0;
+                margin-bottom: 0.5em;
+                font-size: 2em;
+                letter-spacing: 0.01em;
+                font-weight: 700;
+            }
+            .blog-post ul,
+            .blog-post ol {
+                margin-left: 1.5em;
+                margin-bottom: 1em;
+            }
+            .blog-post li {
+                margin-bottom: 0.5em;
+                font-size: 1.07em;
+            }
+            .blog-post blockquote {
+                border-left: 4px solid #326978;
+                background: #22313a;
+                color: #90c2d4;
+                margin: 1.5em 0;
+                padding: 1em 1.5em;
+                font-style: italic;
+                border-radius: 6px;
+            }
+            .blog-post a {
+                color: #90c2d4;
+                font-weight: 600;
+                text-decoration: underline;
+                transition: color 0.2s;
+            }
+            .blog-post a:hover {
+                color: #326978;
+            }
+            @media (max-width: 600px) {
+                .blog-section, .blog-post {
+                    padding: 1em 0.5em;
+                }
+                .blog-post h2 {
+                    font-size: 1.3em;
+                }
+            }
+            .blog-full-content {
+                margin-top: 1em;
+                animation: fadeIn 0.3s;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px);}
+                to { opacity: 1; transform: translateY(0);}
+            }
+            .blog-expand-btn {
+                background: #326978;
+                color: #f3ede3;
+                border: none;
+                border-radius: 4px;
+                padding: 0.6em 1.3em;
+                font-weight: 600;
+                margin-top: 0.5em;
+                cursor: pointer;
+                transition: background 0.2s, color 0.2s;
+            }
+                .blog-expand-btn:hover {
+                background: #f3ede3;
+                color: #326978;
+            }
+
+
         </style>
         <script type="text/javascript">
             WebFont.load({
@@ -123,61 +278,35 @@
                         <div class="home-tab-page">
                             <div class="tab-pane">
                                 <div class="tab-content-wrapper">
+                                    <div class="logo-row">
+                                        <a href="/index.html" aria-label="Go to Main Coaching Page">
+                                            <img src="/images/allthree.png" alt="main">
+                                          </a>
+                                          <a href="/fitness.html" aria-label="Go to Fitness Coaching Page">
+                                            <img src="/images/fire.png" alt="fitness">
+                                          </a>
+                                          <a href="/parents.html" aria-label="Go to Parents Coaching Page">
+                                            <img src="/images/owl.png" alt="parents">
+                                          </a>
+                                          <a href="/traders.html" aria-label="Go to Traders Coaching Page">
+                                            <img src="/images/fox.png" alt="traders">
+                                          </a>
+                                    </div>    
                                     <div class="section" style="margin-top:2em;">
-                                      <div class="page-title" style="font-size: 40px; margin-bottom: 1em;">Insights and Resources</div>
-                                      
-                                      <!-- Fitness Blogs -->
-                                      <div class="basic-information-wrapper" style="margin-bottom: 0.5em;">
-                                        <div class="basic-information" style="font-size: 1.4em; font-weight: bold;">Fitness Blogs</div>
-                                      </div>
-                                      <ul style="margin-bottom: 1.5em; margin-left: 1.5em;">
-                                        <li><a href="https://yourfitnessblog1.com" target="_blank">How to Build Consistency in Your Workouts</a></li>
-
-                                      </ul>
-                                      <div class="home-divider" style="margin: 1.5em 0;"></div>
-                                      
-                                      <!-- Parent Blogs -->
-                                      <div class="basic-information-wrapper" style="margin-bottom: 0.5em;">
-                                        <div class="basic-information" style="font-size: 1.4em; font-weight: bold;">Parent Blogs</div>
-                                      </div>
-                                      <ul style="margin-bottom: 1.5em; margin-left: 1.5em;">
-                                        <li><a href="https://yourparentblog1.com" target="_blank">Healthy Habits for Busy Families</a></li>
-
-                                      </ul>
-                                      <div class="home-divider" style="margin: 1.5em 0;"></div>
-                                      
-                                      <!-- Trader Blogs -->
-                                      <div class="basic-information-wrapper" style="margin-bottom: 0.5em;">
-                                        <div class="basic-information" style="font-size: 1.4em; font-weight: bold;">Trader Blogs</div>
-                                      </div>
-                                      <ul style="margin-bottom: 1.5em; margin-left: 1.5em;">
-                                        <li><a href="https://yourtraderblog1.com" target="_blank">Staying Disciplined When Markets Get Wild</a></li>
-                                        
-                                      </ul>
-                                      
-                                      
-                                      <!-- Worksheets not sure if I want to give up the worksheets for free yet. 
-                                      <div class="basic-information-wrapper" style="margin-bottom: 0.5em;">
-                                        <div class="basic-information" style="font-size: 1.4em; font-weight: bold;">Worksheets</div>
-                                      </div>
-                                      <div style="margin-left: 1.5em;">
-                                        <strong style="color: #f3ede3;">Fitness Worksheets:</strong>
-                                        <ul style="margin-bottom: 1em;">
-                                          <li><a href="https://yourlink.com/fitness-boredom-eating.pdf" target="_blank">Boredom Eating Worksheet</a></li>
-                                          <li><a href="https://yourlink.com/fitness-mindless-eating.pdf" target="_blank">Mindless Eating Worksheet</a></li>
-                                        </ul>
-                                        <div class="home-divider" style="margin: 1.5em 0;"></div>
-                                        <strong style="color: #f3ede3;">Parent Worksheets:</strong>
-                                        <ul style="margin-bottom: 1em;">
-                                          <li><a href="https://yourlink.com/parents-family-habits.pdf" target="_blank">Family Habits Worksheet</a></li>
-                                        </ul>
-                                        <div class="home-divider" style="margin: 1.5em 0;"></div>
-                                        <strong style="color: #f3ede3;">Trader Worksheets:</strong>
-                                        <ul>
-                                          <li><a href="https://yourlink.com/trader-discipline.pdf" target="_blank">Trading Discipline Worksheet</a></li>
-                                        </ul>
-                                      </div>  -->
-                                        
+                                        <div class="page-title" style="font-size: 40px; margin-bottom: 1em;">Insights and Resources</div>
+                                        <div class="blog-category-filter" style="margin-bottom: 1.5em;">
+                                          <button class="blog-filter-btn" data-filter="all">All</button>
+                                          <button class="blog-filter-btn" data-filter="fitness">Fitness</button>
+                                          <button class="blog-filter-btn" data-filter="parent">Parent</button>
+                                          <button class="blog-filter-btn" data-filter="trader">Trader</button>
+                                        </div>
+                                        <div id="blog-posts-container">
+                                          <!-- Example blog post (add more below by copy/paste) -->
+                                          <!-- New blog post always at the top -->
+                                          <div class="blog-post" data-category="fitness"> <h2>Fitness Consistency Hack: How to Build Momentum When Motivation Fades</h2> <p class="blog-preview"> Struggling to stick with your workouts? Here’s a practical, low-barrier strategy to help you show up—even on days when motivation is nowhere to be found. </p> <button class="blog-expand-btn">Read More</button> <div class="blog-full-content" style="display:none;"> <ul> <li>Set a simple intention: Right after waking up, before checking your phone, decide on one small fitness action for the day. Two minutes is enough to start.</li> <li>Location doesn’t matter: Bedroom, living room, or any small space—no equipment needed. The goal is to move, not to be perfect.</li> <li>Track your progress: Each day, check off “I moved for 5 minutes.” Each week, reflect—did this change your day for the better?</li> <li>Start easy: If you’re short on time, just do two minutes. If it feels too easy, that’s the point—consistency beats intensity.</li> <li>Missed a day? No problem. Just get back to it tomorrow. Progress is built on returning, not perfection.</li> <li>Big picture: Small wins every day lead to real results. This isn’t about sweating—it’s about building the habit.</li> </ul> <blockquote> Showing up is always the hardest part. Tiny actions, repeated, become powerful habits. </blockquote> <p> Need personal support building discipline or routine? Email me at fitness@ttinsley.dev or DM me on Instagram to get started. </p> </div> </div>
+                                          <div class="blog-post" data-category="parent"> <h2>Quick Reset for Overwhelmed Parents: How to Regain Calm and Control</h2> <p class="blog-preview"> Parenting can feel relentless. Here’s a fast, practical reset for those moments when frustration, guilt, or chaos take over—so you can show up as the parent you want to be, even on tough days. </p> <button class="blog-expand-btn">Read More</button> <div class="blog-full-content" style="display:none;"> <ul> <li>Pause and breathe: Step away for 30 seconds if you can. Three slow breaths. Remind yourself—this moment doesn’t define your parenting.</li> <li>Notice your thoughts: Are you catastrophizing (“I’m failing”)? Try saying, “This is hard, but it’s temporary.”</li> <li>Reset expectations: What’s actually urgent? Can something wait? Lower the bar for now—survival is success on tough days.</li> <li>Reconnect: Even if you just lost your cool, repair is possible. A simple “I’m sorry, that was tough for me too” builds trust and models emotional honesty.</li> <li>Reflect: What triggered you? What would you tell a friend in your shoes? Be as kind to yourself as you would to them.</li> <li>Plan one small win: Choose a single thing you can do differently next time—no need for perfection, just progress.</li> </ul> <blockquote> Change starts with small steps—even if it feels awkward. Just noticing and pausing is progress. </blockquote> <p> Need support building better routines or breaking old patterns? Email me at behavioralcoaching@ttinsley.dev or DM me on Instagram anytime. </p> </div> </div>
+                                          <div class="blog-post" data-category="trader"> <h2>Trading Emotions Cheat Sheet: Regain Discipline Fast</h2> <p class="blog-preview"> Emotional trading can wreck your results. Use this cheat sheet to reset your mindset, protect your capital, and stay disciplined—especially when the pressure is on. </p> <button class="blog-expand-btn">Read More</button> <div class="blog-full-content" style="display:none;"> <ul> <li>Pre-market prep: Trade your plan, not your emotions. Your rules are there to protect you. One trade never defines your career.</li> <li>Fear interruptions: Stop and ask, what does your plan say? Fear is information, not instruction. Missing out is better than losing capital.</li> <li>Greed checks: Pigs get slaughtered—take profit. The market will be here tomorrow. Stick to your targets. Greed has cost you more than fear.</li> <li>Post-trade reset: That trade is done. Learn, then let go. Start each trade with a clear mind. Revenge trading is gambling. Consistency matters more than single results.</li> <li>Energy grounding: Preserve your capital. No trade is a decision too. This feeling will pass—protect your capital.</li> <li>Emergency reset: Breathe. Count to 10. What would your mentor do? You can always walk away.</li> <li>Accountability: What would you tell another trader? Good trades need good execution. Discipline means knowing when to walk away.</li> </ul> <blockquote> Sometimes the best trade is asking for help. Consistency and discipline—not emotion—define your trading career. </blockquote> <p> Need personal support with discipline or emotional cycles? Email me at behavioralcoaching@ttinsley.dev or DM me on Instagram to get started. </p> </div> </div>
+                                        </div>
                                     </div>
                                   </div>
                             </div>
@@ -214,4 +343,36 @@
                 </div>
             </div>
         </div>
+        <script>
+            // Blog category filter
+            document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+              btn.addEventListener('click', function() {
+                document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                document.querySelectorAll('.blog-post').forEach(post => {
+                  if (filter === 'all' || post.getAttribute('data-category') === filter) {
+                    post.style.display = '';
+                  } else {
+                    post.style.display = 'none';
+                  }
+                });
+              });
+            });
+            // Set 'All' as default
+            document.querySelector('.blog-filter-btn[data-filter="all"]').classList.add('active');
+
+            document.querySelectorAll('.blog-expand-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+                if (content.style.display === "none" || !content.style.display) {
+                    content.style.display = "block";
+                    this.textContent = "Show Less";
+                } else {
+                    content.style.display = "none";
+                    this.textContent = "Read More";
+                }
+                });
+            });           
+        </script>    
     </body>
