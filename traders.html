@@ -101,6 +101,47 @@
             80%  { transform: scale(1.09) translateY(-4px);}
             100% { transform: scale(1.09) translateY(-1px);}
         }
+        .ready-quiz-btn {
+                display: inline-block;
+                padding: 16px 36px;
+                background: linear-gradient(90deg, #326978 60%, #15374e 100%);
+                color: #f3ede3;
+                font-size: 1.15rem;
+                font-weight: 700;
+                border-radius: 10px;
+                text-decoration: none;
+                box-shadow: 0 3px 18px rgba(21,55,78,0.09);
+                letter-spacing: 0.03em;
+                transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+                position: relative;
+                overflow: hidden;
+            }
+            .ready-quiz-btn:after {
+                content: '';
+                position: absolute;
+                left: 0; top: 0; right: 0; bottom: 0;
+                background: rgba(152,159,165,0.09);
+                opacity: 0;
+                transition: opacity 0.23s;
+                border-radius: inherit;
+                pointer-events: none;
+            }
+            .ready-quiz-btn:hover, .ready-quiz-btn:focus {
+                transform: scale(1.07) translateY(-2px);
+                box-shadow: 0 8px 32px rgba(50,105,120,0.15);
+            }
+            .ready-quiz-btn:hover:after, .ready-quiz-btn:focus:after {
+                opacity: 1;
+                animation: bounce 0.4s;
+            }
+            @keyframes bounce {
+                0%   { transform: translateY(0);}
+                20%  { transform: translateY(-6px);}
+                40%  { transform: translateY(0);}
+                60%  { transform: translateY(-3px);}
+                80%  { transform: translateY(0);}
+                100% { transform: translateY(-1px);}
+            }
         </style>
         <script type="text/javascript">
             WebFont.load({
@@ -183,36 +224,71 @@
                                           <img src="/images/fox.png" alt="traders" class="current-page">
                                         </a>
                                       </div>
-                                    <div class="video-introduction">
-                                        <p style="color: #ffffff">Watch the video below to learn more about how I can help you achieve your goals.</p>
-                                        <div class="video-wrapper">
-                                            <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/d4ff12523d9b4cf2ac69a8154b13da76?sid=2aa37813-889f-4d28-9400-14fabdada1d1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+                                    <div class="page-title" style="font-size: 40px;">Why Trading Feels So Tough</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">It’s Not Just About Charts</div>
+                                    </div>
+                                    <p class="home-main-info">Markets move fast, but the real challenge is managing yourself. Even the best strategy can get derailed by stress, overtrading, or chasing losses. If you’re tired of letting emotions run the show, you’re not alone—most traders struggle with the same patterns.</p>
+                                    <div class="home-divider"></div>
+
+                                    <div class="page-title" style="font-size: 40px;">Why Behavior Matters</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">Your Mindset Is Your Edge</div>
+                                    </div>
+                                    <p class="home-main-info">Success in trading isn’t just about knowledge—it’s about discipline, patience, and emotional control. I help traders spot the habits and triggers that lead to impulsive decisions, so you can stick to your plan and trade with clarity, not chaos.</p>
+                                    <div class="home-divider"></div>
+
+                                    <div class="page-title" style="font-size: 40px;">What to Expect</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">Direct, Real-World Support</div>
+                                    </div>
+                                    <p class="home-main-info">Every trader is different, so every session is tailored to your goals and pain points. We’ll work together to break bad habits, build stronger routines, and reset your approach—no fluff, just practical strategies and honest feedback from someone who’s traded, too.</p>
+                                    <div class="home-divider"></div>
+                                    <div class="page-title" style="font-size: 40px;">The Fox</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">Adapt, Outsmart, Win</div>                                        
+                                    </div>
+                                    <p class="home-main-info">The fox is your symbol—quick, adaptable, and always thinking ahead. My coaching helps you stay sharp, adjust on the fly, and outsmart the habits that sabotage your trading. It’s about building mental flexibility and discipline, trade after trade.</p>
+                                    <div class="home-divider"></div>
+                                    <div class="page-title" style="font-size: 40px;">Common Struggles</div> 
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">Here are some challenges I help traders work through:</div>                                        
+                                    </div>
+                                    <div data-w-id="53ff260c-dce4-c749-6e3b-4d3370a1adae" class="home-progress-bar-wrapper">
+                                        <div class="home-progress-bar">
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">Revenge Trading</div>
+                                                <p>Trying to win back losses by taking impulsive trades, often making things worse.</p>
+                                            </div>
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">Breaking Your Own Rules</div>
+                                                <p>Ignoring your plan when emotions run high, even if you know better.</p>
+                                            </div>
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">Emotional Swings</div>
+                                                <p>Getting caught in cycles of fear, greed, or frustration that cloud your decisions.</p>
+                                            </div>
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">Overtrading & Burnout</div>
+                                                <p>Jumping into too many trades or staying glued to the screen until you’re exhausted</p>
+                                            </div>
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">Struggling to Bounce Back</div>
+                                                <p>Finding it hard to reset after a bad day or a big loss.</p>
+                                            </div>                                            
+                                            <div class="home-progress-bar-item">
+                                                <div class="home-progress-bar-title">We’ll tackle these together, so you can trade with more clarity, discipline, and confidence.</div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="home-divider"></div>
-                                    <h3 class="home-section-title">Send Message</h3>
-                                    <div class="w-form">
-                                        <form target="_blank" action="https://formsubmit.co/fitness@ttinsley.dev" method="POST">
-                                            <input class="home-contact-text-field w-input" maxlength="256" name="first name" data-name="Name 3" placeholder="first name" type="text" id="name-3" required=""/>
-                                            <input class="home-contact-text-field w-input" maxlength="256" name="second name" data-name="Name 2" placeholder="second name" type="text" id="name-2" required=""/>
-                                            <input class="home-contact-text-field w-input" maxlength="256" name="email" data-name="Email 2" placeholder="email" type="email" id="email-2" required=""/>
-                                            <input class="home-contact-text-field w-input" maxlength="10" name="phone" data-name="phone" placeholder="1234567890" type="tel" id="phone" required pattern="\d{10}" title="Phone number must be exactly 10 digits"/>
-                                            <div class="home-contact-text-field">
-                                                <span>Select your service:</span><br>
-                                                <label><input type="radio" id="personal-training" name="service" value="personal-training" required="">  Personal Training</label>
-                                                <label><input type="radio" id="behavioral-change-counseling" name="service" value="behavioral-change-counseling">  Behavioral Change Counseling</label>
-                                                <label><input type="radio" id="monthly-workouts" name="service" value="monthly-workouts">  Monthly Workouts</label>
-                                            </div>
-                                            <textarea placeholder="message" maxlength="5000" id="Message-2" name="Message-2" required="" data-name="Message 2" class="home-contact-message-field w-input" style=" margin-bottom: 15px;"></textarea>
-                                            <input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Send Message"/>
-                                        </form>
-                                        <div class="success-message w-form-done">
-                                            <div>Thank you! Your submission has been received!</div>
-                                        </div>
-                                        <div class="error-message w-form-fail">
-                                            <div>Oops! Something went wrong while submitting the form.</div>
-                                        </div>
+                                    <div class="page-title" style="font-size: 40px;">Ready for Change?</div>
+                                    <div class="basic-information-wrapper">
+                                        <div class="basic-information">Grab Your Free Trading Psychology Quick Fix</div>                                        
                                     </div>
+                                    <p class="home-main-info">Struggling with discipline, rule-breaking, or emotional trades? You’re not alone, and you don’t have to figure it out solo.<br><br>Download my free Trading Psychology Quick Fix sheet for practical, in-the-moment tools you can use before, during, and after every trading session.<br><br>Keep it at your desk. Use it when emotions spike. Let it help you build better habits, one trade at a time.</p>
+                                    <a href="https://drive.google.com/file/d/1Lyo0V95Dy9P-MsiFXkrljzElxpTJctNK/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="ready-quiz-btn">Trading Psychology Quick Fix</a>
                                 </div>
                             </div>
                         </div>
