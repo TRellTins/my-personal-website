@@ -121,6 +121,27 @@
                 80%  { transform: translateY(0);}
                 100% { transform: translateY(-1px);}
             }
+            a {
+                color: #989fa5; /* or whatever your default link color is */
+                text-decoration: none;
+                transition: color 0.3s cubic-bezier(.4,0,.2,1), background 0.3s cubic-bezier(.4,0,.2,1);
+            }
+            a:hover {
+                color: #326978; /* Your main brand teal /
+                background: #f3ede340; / Optional: adds a soft highlight on hover */
+                border-radius: 4px;
+                padding: 2px 6px;
+            }
+            .home-tab-link:hover img,
+            .home-tab-link:focus img {
+                /* Copy the same transform, box-shadow, and animation from .home-services-card a:hover img */
+                transform: scale(1.09) translateY(-6px);
+                box-shadow:
+                    0 0 0 10px rgba(50, 105, 120, 0.13),
+                    0 0 0 22px rgba(152, 159, 165, 0.09),
+                    0 8px 32px rgba(21, 55, 78, 0.15);
+                animation: bounce 0.4s;
+            }
 
        </style>
        <script type="text/javascript">
@@ -182,7 +203,9 @@
                             <a href="/resources.html" class="home-tab-link w-inline-block">
                                 <img src="images/notebook.png" loading="lazy" alt="icon"/>
                             </a>
-                            <a href="/index.html" aria-current="page" class="logo-nav w--current">TT</a>
+                            <a href="/index.html" aria-current="page" class="logo-nav w--current">
+                                <img src="/images/allthree.png" loading="lazy" alt="icon"/>
+                            </a>
                             <a href="#" class="download-button w-inline-block">
                                 <!-- <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/62972bd0ecfe8300b1f7c114_Icon-download-1.svg" loading="lazy" alt="icon"/> -->
                             </a>
