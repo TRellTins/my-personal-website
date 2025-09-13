@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Behavioral Change Coaching in Mechanicsville, VA | You’re Not Broken—You’re Ready for Change
+    </title>
+    <meta
+      name="description"
+      content="Practical behavioral change coaching in Mechanicsville/Richmond, VA. Take a 3–5 min Readiness for Change Quiz—no pressure, no judgment."
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://ttinsley.dev/images/logo.png"
+    />
+
+    <style>
+      :root {
+        --bg: #0f0f10;
+        --surface: #16171a;
+        --muted: #8e98a8;
+        --text: #e9edf2;
+        --brand-1: #223f54;
+        --brand-2: #577480;
+        --accent: var(--brand-1);
+        --accent: var(--brand-1);
+        --danger: #f97316;
+        --focus: #f59e0b;
+        --maxw: 1120px;
+        --radius: 14px;
+        --radius-sm: 10px;
+        --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --shadow-2: 0 24px 60px rgba(0, 0, 0, 0.45);
+        --pad: clamp(16px, 3vw, 28px);
+        --gap: clamp(16px, 2.5vw, 24px);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: radial-gradient(
+            1400px 800px at 20% -10%,
+            #1b1c20 0%,
+            #0e0f11 50%,
+            #0b0c0e 100%
+          ),
+          var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
+          Noto Sans, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 var(--pad);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: saturate(130%) blur(10px);
+        background: linear-gradient(
+          180deg,
+          rgba(10, 10, 12, 0.85),
+          rgba(10, 10, 12, 0.55)
+        );
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand img {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: contain;
+        background: #0c0d10;
+        box-shadow: var(--shadow-1);
+      }
+
+      .brand .name {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .nav .cta {
+        display: none;
+      }
+
+      @media (min-width: 860px) {
+        .nav .cta {
+          display: inline-flex;
+        }
+      }
+
+      .btn {
+        --btn-bg: var(--accent);
+        --btn-color: #e7ebf2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        background: var(--btn-bg);
+        color: var(--btn-color);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0 10px 20px rgba(129, 217, 243, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        transition: transform 0.06s ease, box-shadow 0.2s ease,
+          background 0.2s ease;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        text-decoration: none;
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .btn.secondary {
+        --btn-bg: #1f2937;
+        --btn-color: var(--text);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      }
+
+      .btn.fire {
+        --btn-bg: var(--danger);
+        box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 2px;
+      }
+
+      .hero {
+        padding: clamp(40px, 6vw, 80px, 100px) 0 clamp(20px, 5vw, 48px);
+        position: relative;
+        overflow: clip;
+      }
+
+      .hero .grid {
+        display: grid;
+        gap: var(--gap);
+        grid-template-columns: 1fr;
+      }
+
+      @media (min-width: 920px) {
+        .hero .grid {
+          grid-template-columns: 1.2fr 0.8fr;
+          align-items: center;
+        }
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        color: #ffffff;
+        background: #577480;
+        border: 1px solid #a2c0cd;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+
+      h1 {
+        font-size: clamp(28px, 4.4vw, 48px);
+        line-height: 1.12;
+        margin: 12px 0 8px;
+        letter-spacing: -0.3px;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: clamp(16px, 2.1vw, 18px);
+        max-width: 62ch;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .sr-only {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        white-space: nowrap;
+        border: 0;
+        padding: 0;
+        margin: -1px;
+      }
+      .relief {
+        display: grid;
+        gap: 12px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius-sm);
+        padding: 16px;
+        box-shadow: var(--shadow-1);
+      }
+
+      .relief-lead {
+        margin: 0;
+        color: var(--text);
+        font-size: clamp(16px, 2.2vw, 18px);
+      }
+
+      .relief-points {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .relief-points li {
+        margin: 4px 0;
+      }
+      .changes {
+        display: grid;
+        gap: var(--gap);
+        margin-top: 8px;
+      }
+      .change {
+        background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: var(--radius-sm);
+        padding: 16px;
+        box-shadow: var(--shadow-1);
+      }
+      .change-title {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+      .change-text {
+        margin: 0;
+        color: var(--muted);
+      }
+      /* 3-up on desktop, single column on mobile */
+      @media (min-width: 900px) {
+      .changes { grid-template-columns: 1fr 1fr 1fr; }
+      }
+      .how-steps {
+      margin: 8px 0 0;
+      padding-left: 22px; 
+      display: grid;
+      gap: 14px;
+      }
+      .how-steps li {
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      box-shadow: var(--shadow-1);
+      }
+      .how-step-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+      }
+      .how-step-text {
+      margin: 0 0 10px;
+      color: var(--muted);
+      }
+      .how-step-cta { margin: 0; }
+      @media (min-width: 900px) {
+      .how-steps { padding-left: 26px; gap: var(--gap); }
+      }
+      .objections {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: grid;
+      gap: var(--gap);
+      }
+      .objection {
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      box-shadow: var(--shadow-1);
+      }
+      .objection-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+      }
+      .objection-text {
+      margin: 0;
+      color: var(--muted);
+      }
+      @media (min-width: 900px) {
+      .objections { grid-template-columns: 1fr 1fr; } 
+      }
+      .proof {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: grid;
+      gap: var(--gap);
+      }
+      .proof-item {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      box-shadow:
+      0 8px 24px rgba(0,0,0,.35),
+      0 0 0 1px rgba(255,255,255,.06),
+      0 0 24px rgba(34,63,84,.26),
+      0 0 40px rgba(87,116,128,.16);
+      }
+      .proof-quote {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(16px, 2.2vw, 18px);
+      line-height: 1.5;
+      }
+      @media (min-width: 900px) {
+      .proof { grid-template-columns: 1fr 1fr 1fr; }
+      }
+      .pillars {
+        display: grid;
+        gap: var(--gap);
+        }
+        .pillar {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 56px 1fr;
+        align-items: start;
+        background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: var(--radius-sm);
+        padding: 16px;
+        box-shadow: var(--shadow-1);
+        }
+        .pillar-media {
+        display: grid;
+        place-items: center;
+        }
+        .pillar-logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+        background: rgb(255, 255, 255);
+        border: 1px solid rgba(255,255,255,.12);
+        }
+        .pillar-title {
+        margin: 0 0 4px;
+        font-size: 18px;
+        }
+        .pillar-subtitle {
+        margin: 0 0 6px;
+        color: var(--muted);
+        }
+        .pillar-text {
+        margin: 0;
+        color: var(--text);
+        opacity: .95;
+        }
+        @media (min-width: 900px) {
+        .pillars {
+        grid-template-columns: 1fr 1fr 1fr;
+        }
+        .pillar {
+        grid-template-columns: 56px 1fr;
+        height: 100%;
+        }
+        }
+        .takeaways {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+        display: grid;
+        gap: var(--gap);
+        }
+        .takeaway {
+        background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: var(--radius-sm);
+        padding: 16px;
+        box-shadow: var(--shadow-1);
+        }
+        .takeaway-title {
+        margin: 0 0 6px;
+        font-size: 18px;
+        }
+        .takeaway-text {
+        margin: 0;
+        color: var(--muted);
+        }
+        .takeaways-cta { margin: 14px 0 0; }
+        @media (min-width: 900px) {
+        .takeaways { grid-template-columns: 1fr 1fr 1fr; }
+        }
+        .faq-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+        gap: 8px;
+        margin: 8px 0 18px;
+        }
+        .faq-title {
+        margin: 0;
+        text-align: center;
+        font-size: clamp(22px, 2.6vw, 28px);;
+        }
+        .faq-logo {
+        width: clamp(40px, 6vw, 56px);
+        height: auto;
+        border-radius: 10px;
+        background: rgb(255, 255, 255);
+        border: 1px solid rgba(255,255,255,.12);
+        box-shadow: var(--shadow-1);
+        
+        }
+        /* Mobile: logo above title, full-width stack /
+        @media (max-width: 640px) {
+        .faq-header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 4px 0 16px;
+        }
+        .faq-logo {
+        grid-column: 1;
+        justify-self: center;
+        width: 72px; / a bit larger for clarity on mobile 
+        }*/
+        .faq-title {
+        grid-column: 1;
+        text-align: center;
+        font-size: clamp(22px, 6vw, 26px);
+        }
+
+        /* FAQ list readability */
+        .faq {
+        display: grid;
+        gap: 10px 0;
+        }
+        .faq dt {
+        font-weight: 700;
+        margin-top: 14px;
+        font-size: clamp(16px, 2.4vw, 18px);
+        }
+        .faq dd {
+        margin: 6px 0 0 0;
+        color: var(--muted);
+        max-width: 75ch;
+        }
+        /* Optional: subtle separators for readability */
+        .faq dt + dd {
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .faq dd + dt {
+        padding-top: 10px;
+        }
+
+        .site-footer {
+        padding: 28px var(--pad) 36px;
+        border-top: 1px solid rgba(255,255,255,.08);
+        margin-top: clamp(24px, 6vw, 56px);
+        }
+        .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        }
+        .footer-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        text-decoration: none;
+        }
+        .footer-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.12);
+        box-shadow: var(--shadow-1);
+        object-fit: contain;
+        }
+        .footer-name {
+        font-weight: 700;
+        letter-spacing: .2px;
+        }
+        .footer-nav {
+        display: inline-flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        }
+        .footer-nav a {
+        color: var(--muted);
+        text-decoration: none;
+        }
+        .footer-nav a:hover { text-decoration: underline; }
+        .footer-copy {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+        }
+        .footer-inner { gap: 12px 18px; }
+        .footer-email {
+        color: var(--muted);
+        text-decoration: none;
+        word-break: break-word;
+        }
+        .footer-email:hover { text-decoration: underline; }
+        @media (max-width: 640px) {
+        .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        }
+        .footer-email {
+        order: 2; /* stacks under the brand on mobile */
+        }
+        }
+    </style>
+  </head>
+
+  <body>
+    <a class="sr-only" href="#main">Skip to content</a>
+
+    <header>
+      <div class="wrap nav">
+        <a
+          class="brand"
+          href="#top"
+          aria-label="Terrell Tinsley Behavioral Coaching"
+        >
+          <img
+            src="images/allthree.png"
+            alt="Terrell Tinsley logo"
+          />
+          <span class="name">Terrell Tinsley Behavioral Coaching</span>
+        </a>
+
+        <a
+          class="btn cta"
+          href="https://forms.gle/ebUsKQCwjXtToM5GA"
+          target="_blank"
+          rel="noopener"
+          aria-label="Take the Readiness for Change Quiz"
+        >
+          Take the Quiz
+        </a>
+      </div>
+    </header>
+
+    <main id="main">
+        <section class="hero wrap" id="top">
+            <div class="grid">
+            <div>
+                <span class="eyebrow">No pressure. No judgment.</span>
+                <h1>
+                Behavioral Change Coaching That Fits Your Life (No Judgment)
+                </h1>
+                <p class="lead">
+                Stuck doesn’t mean broken. I offer practical behavioral change
+                coaching in Mechanicsville, VA, serving Mechanicsville/Richmond
+                and clients online nationwide. If change still feels hard, it’s
+                not a character flaw, it’s a system problem. We’ll rebuild your
+                system with small steps you can keep, so habits stick without
+                relying on willpower. Start with the Readiness for Change Quiz for
+                a clear, pressure-free next step.
+                </p>
+
+                <div class="hero-actions">
+                <a
+                    class="btn"
+                    href="https://forms.gle/ebUsKQCwjXtToM5GA"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Take the Readiness for Change Quiz (3–5 minutes)">
+                    Take the Readiness for Change Quiz (3–5 minutes)
+                </a>
+
+                <a class="btn secondary" href="#how-it-works">How it works</a>
+                </div>
+
+                <p class="note">
+                No pressure. No judgment. You can take the quiz without an email. If you want a copy of your responses emailed to you, add your email at the end and I’ll send it. 
+                <a
+                    href="https://forms.gle/ebUsKQCwjXtToM5GA"
+                    target="_blank"
+                    rel="noopener"
+                    >Readiness for Change Quiz</a>.
+                </p>
+                
+            </div>
+            </div>
+        </section>
+        <section class="wrap" id="relief" aria-labelledby="relief-title">
+          <h2 class="kicker" id="relief-title">You’re Not Broken—You’re Ready for Change</h2>
+
+          <div class="relief">
+            <p class="relief-lead">
+              If “trying harder” hasn’t worked, nothing’s wrong with you. You don’t need more willpower, you need a gentler, smarter system that fits your real life.
+            </p>
+
+            <ul class="relief-points">
+              <li>Trade self-criticism for clarity about what’s actually in the way.</li>
+              <li>Build habits around your energy and schedule—not against them.</li>
+              <li>Make small moves that compound, without perfection or pressure.</li>
+            </ul>
+          </div>
+        </section>
+        <section class="wrap" id="what-changes" aria-labelledby="what-changes-title">
+          <h2 class="kicker" id="what-changes-title">What Changes Here</h2>
+
+          <div class="changes">
+            <article class="change">
+              <h3 class="change-title">Clarity</h3>
+              <p class="change-text">
+                Spot the real bottlenecks (not the ones you’re blaming yourself for) and focus on what actually moves the needle.
+              </p>
+            </article>
+
+            <article class="change">
+              <h3 class="change-title">Capacity</h3>
+              <p class="change-text">Small, realistic actions designed around your energy and schedule. So progress continues even on messy weeks.</p>
+            </article>
+
+            <article class="change">
+              <h3 class="change-title">Accountability</h3>
+              <p class="change-text">Steady, judgment‑free check‑ins that compound results and prevent the start/stop cycle.</p>
+            </article>
+          </div>
+        </section>
+        <section class="wrap" id="how-it-works" aria-labelledby="how-title">
+          <h2 class="kicker" id="how-title">How It Works (Simple, Pressure-Free)</h2>
+
+          <ol class="how-steps">
+            <li>
+              <h3 class="how-step-title">Take the Readiness for Change Quiz (3–5 minutes)</h3>
+              <p class="how-step-text">
+                Get a quick snapshot of your change readiness and 1–3 practical next steps—no labels, just clarity.
+              </p>
+              <p class="how-step-cta">
+                <a
+                  class="btn"
+                  href="https://forms.gle/ebUsKQCwjXtToM5GA"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Take the Readiness for Change Quiz (3–5 minutes)"
+                >
+                  Take the Quiz
+                </a>
+              </p>
+              <li>
+                <h3 class="how-step-title">Review your results</h3>
+                <p class="how-step-text">
+                  See simple moves you can start today. We’ll design around your real schedule and energy so habits stick.
+                </p>
+              </li>
+
+              <li>
+                <h3 class="how-step-title">Optional consult (20–30 minutes)</h3>
+                <p class="how-step-text">
+                  If it feels like a fit, we’ll map a plan and an accountability rhythm that fits your life.
+                </p>
+              </li>
+            </li>
+          </ol>
+        </section>
+        <section class="wrap" id="objections" aria-labelledby="objections-title">
+          <h2 class="kicker" id="objections-title">Common Concerns, Answered</h2>
+
+          <ul class="objections">
+            <li class="objection">
+              <h3 class="objection-title">“I’ve failed before.”</h3>
+              <p class="objection-text">
+                We design for your real week, not an ideal one. Small, sustainable moves beat all-or-nothing.
+              </p>
+            </li>
+            <li class="objection">
+              <h3 class="objection-title">“I don’t have time.”</h3>
+              <p class="objection-text">We start with 5–10 minute actions that protect energy and still move the needle.</p>
+            </li>
+
+            <li class="objection">
+              <h3 class="objection-title">“I’m worried about judgment.”</h3>
+              <p class="objection-text">Judgment kills change. You’ll get honest, practical support—never shaming.</p>
+            </li>
+
+            <li class="objection">
+              <h3 class="objection-title">“Is it worth the cost?”</h3>
+              <p class="objection-text">Clear plan, visible wins, and fewer start/stop cycles—so progress compounds.</p>
+            </li>
+          </ul>
+        </section>
+        <section class="wrap" id="social-proof" aria-labelledby="proof-title">
+          <h2 class="kicker" id="proof-title">What Clients Say</h2>
+          <ul class="proof" role="list">
+            <li class="proof-item">
+              <blockquote class="proof-quote">
+                <p>“I stopped spiraling and started showing up.”</p>
+              </blockquote>
+            </li>
+            <li class="proof-item">
+              <blockquote class="proof-quote">
+                <p>“I finally trust myself to do what I said I would.”</p>
+              </blockquote>
+            </li>
+            <li class="proof-item">
+              <blockquote class="proof-quote">
+                <p>“My habits make sense now—and they’re sticking.”</p>
+              </blockquote>
+            </li>
+          </ul>
+        </section>
+
+        <section class="wrap" id="brand-pillars" aria-labelledby="brand-pillars-title">
+            <h2 class="kicker" id="brand-pillars-title">Core Pillars</h2>
+
+            <div class="pillars">
+                <article class="pillar">
+                <div class="pillar-media">
+                    <img class="pillar-logo" src="/images/fox.png" alt="Adaptability icon: fox">
+                </div>
+
+                <div class="pillar-content">
+                    <h3 class="pillar-title">Adaptability</h3>
+                    <p class="pillar-subtitle">Coaching that fits your life, not the other way around.</p>
+                    <p class="pillar-text">
+                    Habits are built around your real schedule and energy, so they hold during busy weeks too.
+                    </p>
+                </div>
+                </article>
+
+                <article class="pillar">
+                <div class="pillar-media">
+                    <img class="pillar-logo" src="/images/fire.png" alt="Resilience icon: phoenix">
+                </div>
+
+                <div class="pillar-content">
+                    <h3 class="pillar-title">Resilience</h3>
+                    <p class="pillar-subtitle">Habits that hold when life gets messy.</p>
+                    <p class="pillar-text">
+                    Small, sustainable actions with built‑in recovery, so progress continues—without perfection.
+                    </p>
+                </div>
+                </article>
+
+                <article class="pillar">
+                <div class="pillar-media">
+                    <img class="pillar-logo" src="/images/owl.png" alt="Wisdom icon: owl">
+                </div>
+
+                <div class="pillar-content">
+                    <h3 class="pillar-title">Wisdom</h3>
+                    <p class="pillar-subtitle">Clear, practical guidance—no jargon.</p>
+                    <p class="pillar-text">
+                    We translate behavior science into simple moves you can apply today—clarity you can act on.
+                    </p>
+                </div>
+                </article>
+            </div>
+      </section>
+      <section class="wrap" id="takeaways" aria-labelledby="takeaways-title">
+        <h2 class="kicker" id="takeaways-title">What You’ll Walk Away With</h2>
+        
+        <ul class="takeaways" role="list">
+          <li class="takeaway">
+            <h3 class="takeaway-title">Your readiness snapshot</h3>
+            <p class="takeaway-text">A quick view of where you are in the change process—no labels, just clarity.</p>
+          </li>
+          <li class="takeaway">
+            <h3 class="takeaway-title">1–3 personalized next steps</h3>
+            <p class="takeaway-text">Simple moves you can start this week, designed around your real schedule and energy.</p>
+          </li>
+          <li class="takeaway">
+            <h3 class="takeaway-title">Option to book a consult</h3>
+            <p class="takeaway-text">If you want support, we’ll map a plan and an accountability rhythm that fits your life.</p>
+          </li>
+        </ul>
+        
+        <p class="takeaways-cta">
+          <a class="btn" 
+            href="https://forms.gle/ebUsKQCwjXtToM5GA" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Take the Readiness for Change Quiz (3–5 minutes)">
+            Take the Readiness for Change Quiz <span aria-hidden="true">(3–5 minutes)</span>
+          </a>
+        </p>
+      </section>
+      <section class="wrap" id="faq" aria-labelledby="faq-title"> 
+        <header class="faq-header"> 
+            <h2 class="faq-title" id="faq-title">Mini FAQ</h2> <img class="faq-logo" src="images/allthree.png" alt="Terrell Tinsley logo"> 
+        </header> <dl class="faq">
+
+            <dl class="faq">
+                <dt>How long is the quiz?</dt>
+                <dd>About 3–5 minutes.</dd>
+
+                <dt>What happens after?</dt>
+                <dd>You’ll see a short summary and suggested next steps. You can book a consult if you want support.</dd>
+
+                <dt>Do I have to start coaching?</dt>
+                <dd>No. The quiz stands on its own.</dd>
+
+                <dt>Is this therapy?</dt>
+                <dd>No. This is practical, present focused behavioral coaching. That is action driven and non judgmental.</dd>
+
+                <dt>How much does coaching cost?</dt>
+                <dd>$45 for 25 minutes , $75 for 50 minutes and $135 for 90 minutes.  You pay at booking. Refunds are available up to 24 hours before your session.</dd>
+
+                <dt>Why are there different session lengths (25, 50, 90 minutes)?</dt> 
+                <dd>Different lengths fit different needs and energy levels. 25 minutes is a focused check-in to keep momentum. 50 minutes is a standard working session for planning and problem solving. 90 minutes are for deeper work when you want space to map systems, review patterns, or reset routines without rushing.</dd>
+
+                <dt>What happens after?</dt>
+                <dd>I review your responses, identify the best-fit session length (25/50/90 minutes) and focus, and share 1–3 clear next steps.</dd>
+
+                <dt>Will I get a copy of my quiz results?</dt> 
+                <dd>Yes—on request. Provide your email at the end and I’ll send a copy of your responses along with tailored next steps.</dd>
+
+                <dt>Is this virtual or in-person?</dt>
+                <dd>Both. I serve Mechanicsville/Richmond locally and coach online for clients nationwide.</dd>
+
+                <dt>How often are sessions?</dt>
+                <dd>Weekly works best for momentum. We can adjust cadence based on your capacity and goals.</dd>
+
+                <dt>What if I miss a session?</dt>
+                <dd>You can reschedule up to 12 hours before. Within 24 hours there are no refunds, but we’ll get you back on track.</dd>
+
+                <dt>What if I’ve “failed” at habits before?</dt>
+                <dd>We design for your real week, not an ideal one. Small, sustainable moves beat willpower and “all-or-nothing.”</dd>
+            </dl>
+        </section> 
+        <footer class="site-footer wrap" role="contentinfo"> 
+            <div class="footer-inner"> 
+                <a class="footer-brand" href="https://ttinsley.dev" target="_blank" rel="noopener" aria-label="Visit ttinsley.dev">
+                    <img src="images/allthree.png" alt="Terrell Tinsley logo" class="footer-logo">
+                    <span class="footer-name">ttinsley.dev</span>
+                </a>
+                <a class="footer-email" href="mailto:behavioralcoaching@ttinsley.dev">Email: behavioralcoaching@ttinsley.dev</a>
+                
+                <nav class="footer-nav" aria-label="Social links">
+                    <a href="https://www.instagram.com/trelltinsley?igsh=MjV0Z3I0em4xcHM0&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=100093490851722&mibextid=LQQJ4d" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.threads.com/@trelltinsley?xmt=AQGzffoazNS8YKJ5oA-856hQrPhD1hTXeRGmBaFl0w9OwWI" target="_blank" rel="noopener">Threads</a>
+                </nav>
+            </div> 
+            <p class="footer-copy">©<span id="2025"></span> Terrell Tinsley Behavioral Coaching • Mechanicsville, VA</p> 
+        </footer>    
+    </main>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                "@type": "Question",
+                "name": "How long is the quiz?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "About 3–5 minutes."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "What happens after?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You’ll see a short summary and suggested next steps. You can book a consult if you want support."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "Do I have to start coaching?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The quiz stands on its own."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "Is this therapy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. This is practical, present focused behavioral coaching. That is action driven and non judgmental."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "How much does coaching cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "$45 for 25 minutes , $75 for 50 minutes and $135 for 90 minutes.  You pay at booking. Refunds are available up to 24 hours before your session."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "Why are there different session lengths (25, 50, 90 minutes)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Different lengths fit different needs and energy levels. 25 minutes is a focused check-in to keep momentum. 50 minutes is a standard working session for planning and problem solving. 90 minutes are for deeper work when you want space to map systems, review patterns, or reset routines without rushing."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "What happens after? (review and next steps)",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "I review your responses, identify the best-fit session length (25/50/90 minutes) and focus, and share 1–3 clear next steps."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "Will I get a copy of my quiz results?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes—on request. Provide your email at the end and I’ll send a copy of your responses along with tailored next steps."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "Is this virtual or in-person?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both. I serve Mechanicsville/Richmond locally and coach online for clients nationwide."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "How often are sessions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Weekly works best for momentum. We can adjust cadence based on your capacity and goals."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "What if I miss a session?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can reschedule up to 12 hours before. Within 24 hours there are no refunds, but we’ll get you back on track."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "What if I’ve “failed” at habits before?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We design for your real week, not an ideal one. Small, sustainable moves beat willpower and “all-or-nothing.”"
+                }
+                }
+            ]
+        }
+
+    </script>   
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Terrell Tinsley Behavioral Coaching",
+        "image": "https://ttinsley.dev/images/logo.png",
+        "url": "https://ttinsley.dev",
+        "description": "Practical, non-judgmental behavioral change coaching. Take the 3–5 minute Readiness for Change Quiz and get 1–3 next steps.",
+        "areaServed": [
+            { "@type": "City", "name": "Mechanicsville" },
+            { "@type": "City", "name": "Richmond" },
+            { "@type": "AdministrativeArea", "name": "Hanover County" },
+            { "@type": "AdministrativeArea", "name": "Henrico County" },
+            { "@type": "Country", "name": "United States" }
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mechanicsville",
+            "addressRegion": "VA",
+            "addressCountry": "US"
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=100093490851722&mibextid=LQQJ4d",
+            "https://www.instagram.com/trelltinsley?igsh=MjV0Z3I0em4xcHM0&utm_source=qr",
+            "https://www.threads.com/@trelltinsley?xmt=AQGzffoazNS8YKJ5oA-856hQrPhD1hTXeRGmBaFl0w9OwWI"
+        ],
+        "serviceArea": [
+            {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Mechanicsville",
+                "addressRegion": "VA",
+                "addressCountry": "US"
+            }
+            },
+            {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Richmond",
+                "addressRegion": "VA",
+                "addressCountry": "US"
+            }
+            }
+        ],
+        "email": "behavioralcoaching@ttinsley.dev",
+        "priceRange": "$",
+        "openingHoursSpecification": [
+            {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "07:00",
+            "closes": "20:00"
+            }
+        ],
+        "makesOffer": [
+            {
+            "@type": "Offer",
+            "name": "Behavioral Change Coaching (30 minutes)",
+            "price": "45",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+            },
+            {
+            "@type": "Offer",
+            "name": "Behavioral Change Coaching (60 minutes)",
+            "price": "75",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Coaching Services",
+            "itemListElement": [
+            {
+                "@type": "OfferCatalog",
+                "name": "Behavioral change coaching",
+                "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "name": "Accountability coaching",
+                    "description": "Judgment-free accountability to help habits stick."
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Habit change coaching",
+                    "description": "Small, sustainable steps that fit your real life."
+                }
+                ]
+            }
+            ]
+        }
+        }
+    </script>
+
+  </body>
+</html>
