@@ -15,3 +15,6 @@ the code for new reviews
         <p></p> <!-- Add what they said -->
     </div>
 </div>
+
+the code to add to new blog before the last closing </div>
+<div class="blog-category-logo"></div>
