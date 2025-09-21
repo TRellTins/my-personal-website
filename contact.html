@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact | Terrell Tinsley Coaching</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Have a question or ready to start coaching? Send a message—no pressure, no judgment.">
+  
+  <!-- Canonical & Favicon -->
+  <link rel="canonical" href="https://ttinsley.dev/contact">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/allthree.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/allthree.png">
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ttinsley.dev/contact">
+  <meta property="og:title" content="Contact | Terrell Tinsley Coaching">
+  <meta property="og:description" content="Have a question or ready to start coaching? Send a message—no pressure, no judgment.">
+  <meta property="og:image" content="https://ttinsley.dev/images/quiz-cover.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact | Terrell Tinsley Coaching">
+  <meta name="twitter:description" content="Have a question or ready to start coaching? Send a message—no pressure, no judgment.">
+  <meta name="twitter:image" content="https://ttinsley.dev/images/quiz-cover.png">
+
+  <!-- Styles -->
+  <style>
+    :root {
+      --teal: #326978;
+      --deep: #15374e;
+      --cream: #f3ede3;
+      --gray: #989fa5;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: #0f2330;
+      color: var(--gray);
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 48px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: var(--teal);
+      margin: 0 0 12px;
+      font-size: 32px;
+    }
+
+    p.lead {
+      color: var(--cream);
+      margin: 0 0 28px;
+    }
+
+    form {
+      background: #0f1a22;
+      border: 1px solid rgba(50, 105, 120, .25);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 6px;
+      color: var(--cream);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      border: 1px solid rgba(152, 159, 165, .4);
+      border-radius: 8px;
+      background: #0e141a;
+      color: var(--cream);
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 2px solid var(--teal);
+      border-color: transparent;
+    }
+
+    button {
+      margin-top: 18px;
+      background: linear-gradient(90deg, var(--teal) 60%, var(--deep) 100%);
+      color: var(--cream);
+      border: 0;
+      border-radius: 10px;
+      padding: 14px 22px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 3px 18px rgba(21, 55, 78, .12);
+      transition: transform .18s cubic-bezier(.4, 2, .6, 1), box-shadow .18s;
+    }
+
+    button:hover {
+      transform: scale(1.04) translateY(-1px);
+      box-shadow: 0 8px 28px rgba(50, 105, 120, .18);
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    .social a {
+      color: var(--gray);
+      margin-right: 12px;
+      text-decoration: none;
+    }
+
+    .social a:hover {
+      color: var(--teal);
+    }
+
+    address {
+      font-style: normal;
+      color: var(--gray);
+      margin-top: 10px;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Contact</h1>
+    <p class="lead">
+      Have a question or want to start coaching? Send a message. No pressure, no judgment.  
+      <br><br>I reply 7–8am and 7–8pm ET.
+    </p>
+
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+      <input type="hidden" name="form-name" value="contact">
+
+      <p class="visually-hidden">
+        <label>
+          Don’t fill this out if you’re human: <input name="bot-field">
+        </label>
+      </p>
+
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required autocomplete="name">
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required autocomplete="email">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="footer">
+      <div class="social">
+        <a href="https://instagram.com/trelltinsley" target="_blank" rel="noopener noreferrer nofollow">Instagram</a>
+        <a href="https://facebook.com/profile.php?id=100093490851722" target="_blank" rel="noopener noreferrer nofollow">Facebook</a>
+        <a href="https://www.linkedin.com/in/terrell-tinsley-832a4943" target="_blank" rel="noopener noreferrer nofollow">LinkedIn</a>
+      </div>
+      <address>
+        Terrell Tinsley Coaching • Mechanicsville, VA 23111 • <a href="/">Home</a>
+      </address>
+    </div>
+  </div>
+</body>
+</html>
