@@ -52,7 +52,7 @@
                 text-decoration: none;
                 transition: color 0.3s cubic-bezier(.4,0,.2,1), background 0.3s cubic-bezier(.4,0,.2,1);
             }
-            a:hover {
+            a:not(.ready-quiz-btn):hover {
                 color: #326978; /* Your main brand teal /
                 background: #f3ede340; / Optional: adds a soft highlight on hover */
                 border-radius: 4px;
@@ -117,7 +117,35 @@
             80%  { transform: scale(1.09) translateY(-4px);}
             100% { transform: scale(1.09) translateY(-1px);}
         }
-
+        .ready-quiz-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(90deg, #326978 60%, #15374e 100%);
+            color: #f3ede3;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 3px 14px rgba(21,55,78,0.12);
+            letter-spacing: 0.02em;
+            transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+            will-change: transform;
+        }
+        .ready-quiz-btn:hover,
+        .ready-quiz-btn:focus {
+            transform: translateY(-1px); /* remove scale bounce */
+            box-shadow: 0 6px 20px rgba(50,105,120,0.18);
+            outline: none;
+        }
+        .quiz-cta-wrap {
+            text-align: center;
+            margin: 0.5em 0 1.2em;
+        }
+        /* Center the CTA directly under the page title in the blog section */
+        .quiz-cta-wrap {
+            text-align: center;
+            margin: 0.5em 0 1.2em;
+        }
         .blog-section {
             background: #22313a;
             border-radius: 12px;
@@ -328,6 +356,7 @@
                                     </div>    
                                     <div class="section" style="margin-top:2em;">
                                         <div class="page-title" style="font-size: 40px; margin-bottom: 1em;">Behavioral Change Insights & Resources</div>
+                                        <p class="quiz-cta-wrap"> <a href="/quiz" class="ready-quiz-btn">Readiness for Change Quiz</a> </p>
                                         <div class="blog-category-filter" style="margin-bottom: 1.5em;">
                                           <button class="blog-filter-btn" data-filter="all">All</button>
                                           <button class="blog-filter-btn" data-filter="resilience">Resilience</button>
