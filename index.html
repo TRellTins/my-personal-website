@@ -266,6 +266,60 @@
                     0 8px 32px rgba(21, 55, 78, 0.15);
                 animation: bounce 0.4s;
             }
+            /* Mobile-first: stack with picture last and hide the home tab nav */
+            @media (max-width: 767.98px) {
+                 .home-tab-page{
+                    padding-left: 10px;
+                }
+                .tab-bottom-overlay, .tab-top-overlay{
+                    display: none;
+                }
+                /* 1) Reorder using flex on the immediate wrapper of content + photo */
+                .homepage-main > .base-container.main-home {
+                    display: flex !important;
+                    flex-direction: column !important;
+                }
+
+                .homepage-main .home-main-block {
+                    order: 1 !important;
+                }
+
+                .homepage-main .main-person-image-block {
+                    order: 2 !important;
+                }
+
+                /* 2) Hide the icon nav row on mobile */
+                .homepage-main .home-tab-nav {
+                    display: none !important;
+                }
+
+                /* 3) Make the portrait responsive */
+                .homepage-main .main-person-image {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+
+                /* 4) Guard against horizontal overflow */
+                .homepage-main .w-container,
+                .homepage-main .home-tab-page,
+                .homepage-main .tab-content-wrapper {
+                    overflow-x: hidden !important;
+                }
+                }
+
+                /* Tablet+ restore layout and show nav as before */
+                @media (min-width: 768px) {
+                .homepage-main > .base-container.main-home {
+                    display: block !important; /* restores Webflow default */
+                }
+
+                .homepage-main .home-tab-nav {
+                    display: flex !important;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                }
 
         </style>
         <script type="text/javascript">
