@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thanks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/allthree.png">
+  <style>
+    .digital-shop-section {
+        background: #f3ede3;
+        padding: 3em 1em 2em 1em;
+        border-radius: 18px;
+        max-width: 1100px;
+        margin: 3em auto;
+        box-shadow: 0 6px 32px rgba(50,105,120,0.09);
+    }
+
+    .shop-title {
+        color: #22313a;
+        font-size: 2.4em;
+        font-weight: 800;
+        margin-bottom: 0.4em;
+        text-align: center;
+        letter-spacing: 0.01em;
+    }
+
+    .shop-intro {
+        color: #29414c;
+        text-align: center;
+        margin-bottom: 2em;
+        font-size: 1.15em;
+    }
+
+    .digital-products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2em;
+    }
+
+    .digital-product-card {
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 4px 18px rgba(50,105,120,0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.3em 1em 1.7em 1em;
+        position: relative;
+        transition: box-shadow 0.2s;
+    }
+
+    .digital-product-card:hover {
+        box-shadow: 0 10px 32px rgba(50,105,120,0.14);
+    }
+
+    .worksheet-preview {
+        position: relative;
+        width: 100%;
+        max-width: 240px;
+        aspect-ratio: 4/5;
+        margin-bottom: 1.1em;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #e6f0f3;
+        box-shadow: 0 2px 10px rgba(50,105,120,0.07);
+    }
+
+    .worksheet-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(2.5px) grayscale(30%);
+        opacity: 0.7;
+        transition: filter 0.2s, opacity 0.2s;
+    }
+
+    .digital-product-card:hover .worksheet-preview img {
+        filter: blur(1.5px) grayscale(10%);
+        opacity: 0.85;
+    }
+
+    .product-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .product-title {
+        color: #22313a;
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-bottom: 0.3em;
+        margin-top: 0;
+    }
+
+    .product-desc {
+        color: #29414c;
+        font-size: 1.04em;
+        margin-bottom: 1.2em;
+        min-height: 3.5em;
+    }
+
+    .product-meta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2em;
+    }
+
+    .product-price {
+        color: #326978;
+        font-size: 1.25em;
+        font-weight: 700;
+    }
+
+    .buy-btn {
+        background: linear-gradient(90deg, #326978 60%, #15374e 100%);
+        color: #f3ede3;
+        font-weight: 700;
+        padding: 0.6em 1.5em;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(50,105,120,0.08);
+        transition: background 0.18s, color 0.18s;
+    }
+
+    .buy-btn:hover, .buy-btn:focus {
+        background: #f3ede3;
+        color: #326978;
+        border: 1px solid #326978;
+    }
+
+    .shop-disclaimer {
+        margin-top: 2.5em;
+        text-align: center;
+        color: #989fa5;
+        font-size: 0.97em;
+    }
+
+    @media (max-width: 700px) {
+    .digital-products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+    .digital-product-card {
+        padding: 1em 0.5em 1.3em 0.5em;
+    }
+    }
+
+  </style>
+</head>
+<body>
+    <section class="digital-shop-section">
+        <h1 class="shop-title">Digital Habit Tools & Worksheets</h1>
+        <p class="shop-intro">Not ready for 1:1 coaching? Start with these self-guided, expert-designed resources. Instant download after purchase.</p>
+        <div class="digital-products-grid">
+            <!-- Product Card Example -->
+            <div class="digital-product-card">
+            <div class="worksheet-preview">
+                <img src="images/worksheet1-preview.png" alt="Worksheet Preview: Micro-Habit Tracker"/>
+                <div class="blur-overlay"></div>
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Micro-Habit Tracker</h2>
+                <p class="product-desc">A simple, effective tool to help you build habits that actually stick. Perfect for busy people who want real progress.</p>
+                <div class="product-meta">
+                <span class="product-price">$12</span>
+                <a href="https://buy.stripe.com/test_checkout_link" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+            </div>
+            <!-- Duplicate .digital-product-card for each item -->
+            <div class="digital-product-card">
+            <div class="worksheet-preview">
+                <img src="images/worksheet2-preview.png" alt="Worksheet Preview: Scenario Planner"/>
+                <div class="blur-overlay"></div>
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Scenario-Based Planner</h2>
+                <p class="product-desc">Plan for real-life challenges and stay accountable with this scenario-based worksheet, designed for Richmond’s busiest lives.</p>
+                <div class="product-meta">
+                <span class="product-price">$15</span>
+                <a href="https://buy.stripe.com/test_checkout_link2" target="_blank" class="buy-btn">Buy Now</a>
+                </div>
+            </div>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+        <p class="shop-disclaimer">
+            <small>
+            Digital downloads only. Not therapy or medical advice. For support, email <a href="mailto:youremail@example.com">youremail@example.com</a>.
+            </small>
+        </p>
+    </section>
+</body>
+</html>
