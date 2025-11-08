@@ -2,10 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Thanks</title>
+  <title>Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/allthree.png">
   <style>
+    .logo-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo-row a {
+        display: inline-block;
+        border-radius: 50%;
+        transition: box-shadow 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+        padding: 0;
+    }
+
+    .logo-row img {
+        width: 80px;
+        height: auto;
+        border-radius: 50%;
+        background: transparent;
+        transition: box-shadow 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+        padding: 0;
+        display: block;
+    }
+
+    .logo-row img.current-page {
+        width: 200px;
+        transform: scale(1.2);
+    }
+
+    .logo-row a:hover img,
+    .logo-row a:focus img {
+        transform: scale(1.09) translateY(-6px);
+        box-shadow:
+            0 0 0 10px rgba(50, 105, 120, 0.13),    /* #326978 blue glow */
+            0 0 0 22px rgba(152, 159, 165, 0.09),   /* #989fa5 outer glow */
+            0 8px 32px rgba(21, 55, 78, 0.15);
+        animation: bounce 0.4s;
+        cursor: pointer;
+    }
+
+    @keyframes bounce {
+        0%   { transform: scale(1.09) translateY(0);}
+        20%  { transform: scale(1.12) translateY(-10px);}
+        40%  { transform: scale(1.09) translateY(-4px);}
+        60%  { transform: scale(1.10) translateY(-2px);}
+        80%  { transform: scale(1.09) translateY(-4px);}
+        100% { transform: scale(1.09) translateY(-1px);}
+    }
     .digital-shop-section {
         background: #f3ede3;
         padding: 3em 1em 2em 1em;
@@ -150,6 +198,23 @@
 </head>
 <body>
     <section class="digital-shop-section">
+        <div class="logo-row">
+            <a href="/index.html" aria-label="Go to Main Coaching Page">
+                    <img src="/images/allthree.png" loading="lazy" alt="main">
+                </a>
+                <a href="/resilience.html" aria-label="Go to  Resilience Coaching Page">
+                    <img src="/images/fire.png" loading="lazy" alt="Resilience">
+                </a>
+                <a href="/wisdom.html" aria-label="Go to Wisdom Coaching Page">
+                    <img src="/images/owl.png" loading="lazy" alt="Wisdom">
+                </a>
+                <a href="/adaptability.html" aria-label="Go to Adaptability Coaching Page">
+                    <img src="/images/fox.png" loading="lazy" alt="Adaptability">
+                <a href="/store.html" aria-label="Go to Store">
+                    <img src="/images/shop.png" loading="lazy" alt="Store" class="current-page">
+                </a>
+            </a>                                        
+        </div>  
         <h1 class="shop-title">Digital Habit Tools & Worksheets</h1>
         <p class="shop-intro">Not ready for 1:1 coaching? Start with these self-guided, expert-designed resources. Instant download after purchase.</p>
         <div class="digital-products-grid">
@@ -187,7 +252,7 @@
         </div>
         <p class="shop-disclaimer">
             <small>
-            Digital downloads only. Not therapy or medical advice. For support, email <a href="mailto:youremail@example.com">youremail@example.com</a>.
+            Digital downloads only. Not therapy or medical advice. For support, email <a href="mailto:youremail@example.com">behavioralcoaching@ttinsley.dev</a>.
             </small>
         </p>
     </section>

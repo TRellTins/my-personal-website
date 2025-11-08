@@ -97,6 +97,54 @@
             .sep-16 { height:16px; } 
             .center { text-align:center; } 
             .square-200 { width:200px; height:200px; }
+            .logo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            }
+
+            .logo-row a {
+                display: inline-block;
+                border-radius: 50%;
+                transition: box-shadow 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+                padding: 0;
+            }
+
+            .logo-row img {
+                width: 80px;
+                height: auto;
+                border-radius: 50%;
+                background: transparent;
+                transition: box-shadow 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+                padding: 0;
+                display: block;
+            }
+
+            .logo-row img.current-page {
+                width: 200px;
+                transform: scale(1.2);
+            }
+
+            .logo-row a:hover img,
+            .logo-row a:focus img {
+                transform: scale(1.09) translateY(-6px);
+                box-shadow:
+                    0 0 0 10px rgba(50, 105, 120, 0.13),    /* #326978 blue glow */
+                    0 0 0 22px rgba(152, 159, 165, 0.09),   /* #989fa5 outer glow */
+                    0 8px 32px rgba(21, 55, 78, 0.15);
+                animation: bounce 0.4s;
+                cursor: pointer;
+            }
+
+            @keyframes bounce {
+                0%   { transform: scale(1.09) translateY(0);}
+                20%  { transform: scale(1.12) translateY(-10px);}
+                40%  { transform: scale(1.09) translateY(-4px);}
+                60%  { transform: scale(1.10) translateY(-2px);}
+                80%  { transform: scale(1.09) translateY(-4px);}
+                100% { transform: scale(1.09) translateY(-1px);}
+            }
             .ready-quiz-btn {
                 display: inline-block;
                 padding: 16px 36px;
@@ -346,7 +394,7 @@
                 <div class="home-main-block">
                     <div class="home-tabs">
                         <div class="home-tab-nav">
-                            <a href="/index.html" aria-current="page" class="home-tab-link w-inline-block w--current">
+                            <!-- <a href="/index.html" aria-current="page" class="home-tab-link w-inline-block w--current">
                                 <img src="images/allthree.png" loading="lazy" alt="Terrell Tinsley Coaching logo"/>
                             </a>
                             <a href="/Resilience.html" class="home-tab-link w-inline-block">
@@ -365,12 +413,29 @@
                                 <img src="/images/allthree.png" loading="lazy" alt="Terrell Tinsley Coaching logo"/>
                             </a>
                             <a href="#" class="download-button w-inline-block">
-                                <!-- <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/62972bd0ecfe8300b1f7c114_Icon-download-1.svg" loading="lazy" alt="icon"/> -->
-                            </a>
+                                <img src="https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/62972bd0ecfe8300b1f7c114_Icon-download-1.svg" loading="lazy" alt="icon"/>
+                            </a> -->
                         </div>
                         <div class="home-tab-page">
                             <div class="tab-pane">
                                 <div class="tab-content-wrapper">
+                                    <div class="logo-row">
+                                        <a href="/index.html" aria-label="Go to Main Coaching Page">
+                                          <img src="/images/allthree.png" alt="main" class="current-page">
+                                        </a>
+                                        <a href="/Resilience.html" aria-label="Go to Resilience Coaching Page">
+                                          <img src="/images/fire.png" alt="Resilience">
+                                        </a>
+                                        <a href="/Wisdom.html" aria-label="Go to Wisdom Coaching Page">
+                                          <img src="/images/owl.png" alt="Wisdom">
+                                        </a>
+                                        <a href="/Adaptability.html" aria-label="Go to Adaptability Coaching Page">
+                                          <img src="/images/fox.png" alt="Adaptability">
+                                        </a>
+                                        <a href="/store.html" aria-label="Go to Store">
+                                            <img src="/images/shop.png" loading="lazy" alt="Store">
+                                        </a>
+                                    </div>
                                     <h1 class="page-title">Behavioral Coach in Mechanicsville & Richmond, VA</h1>
                                     <div class="basic-information-wrapper">
                                         <div class="basic-information">Coaching the person, not the problem—real transformation starts when you show up as you are.</div>
