@@ -183,7 +183,10 @@
           successMsg.style.display = 'block';
           errorMsg.style.display = 'none';
           form.querySelectorAll('input, textarea, button, label').forEach(el => el.style.display = 'none');
-          form.reset();
+          // Give user 5 seconds to copy/paste, then submit to Netlify
+          setTimeout(function() {
+            form.submit();
+          }, 5000);
         } else {
           errorMsg.style.display = 'block';
           successMsg.style.display = 'none';
