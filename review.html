@@ -115,6 +115,21 @@
       color: #d7263d;
       font-weight: 600;
     }
+    .copy-btn {
+      margin-bottom: 1em;
+      background: #326978;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5em 1.5em;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .copy-btn:hover, .copy-btn:focus {
+      background: #29414c;
+      color: #fff;
+    }
     @media (max-width: 600px) {
       .review-section {
         padding: 1.1em 0.4em 1.4em 0.4em;
@@ -170,19 +185,39 @@
             `<div>Thank you for your review!</div>
             <div style="margin-top:1em;">
               <strong>Here's what you wrote:</strong>
-              <div style="background:#fff; border-radius:8px; margin:1em 0; padding:1em; color:#22313a; box-shadow:0 2px 8px rgba(50,105,120,0.06); font-size:1em;">
+              <div id="reviewCopyBox" style="background:#fff; border-radius:8px; margin:1em 0; padding:1em; color:#22313a; box-shadow:0 2px 8px rgba(50,105,120,0.06); font-size:1em;">
                 <b>${firstName} ${lastInitial}.</b><br>
                 ${reviewText.replace(/\n/g, "<br>")}
               </div>
+              <button id="copyReviewBtn" class="copy-btn">Copy to Clipboard</button>
               <div>
-                If you have a moment,<br>
-                please <a href="https://g.page/r/CQivTiKUBBC4EAE/review" target="_blank" id="googleReviewLink" style="color:#326978; font-weight:700; text-decoration:underline;">copy your review to Google</a> as well.<br><br>
+                Now, <a href="https://g.page/r/CQivTiKUBBC4EAE/review" target="_blank" id="googleReviewLink" style="color:#326978; font-weight:700; text-decoration:underline;">paste your review to Google</a> as well.<br><br>
                 It helps others find support!
               </div>
             </div>`;
           successMsg.style.display = 'block';
           errorMsg.style.display = 'none';
           form.querySelectorAll('input, textarea, button, label').forEach(el => el.style.display = 'none');
+          form.reset();
+
+          // Copy to Clipboard functionality
+          setTimeout(function() {
+            var copyBtn = document.getElementById('copyReviewBtn');
+            var reviewBox = document.getElementById('reviewCopyBox');
+            if (copyBtn && reviewBox) {
+              copyBtn.onclick = function() {
+                var temp = document.createElement('textarea');
+                temp.value = reviewBox.innerText;
+                document.body.appendChild(temp);
+                temp.select();
+                document.execCommand('copy');
+                document.body.removeChild(temp);
+                copyBtn.textContent = "Copied!";
+                setTimeout(function(){ copyBtn.textContent = "Copy to Clipboard"; }, 1800);
+              };
+            }
+          }, 100);
+
           // Give user 5 seconds to copy/paste, then submit to Netlify
           setTimeout(function() {
             form.submit();
@@ -206,3 +241,4 @@
   </script>
 </body>
 </html>
+
