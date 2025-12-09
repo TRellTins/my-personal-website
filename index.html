@@ -569,6 +569,11 @@
                                     </div>
                                     <div class="home-divider"></div>
                                     <h3 class="home-section-title">Client Reviews</h3>
+                                    <div style="text-align:center; margin-bottom: 2em;">
+                                        <a href="/review.html" class="ready-quiz-btn" style="font-size:1.05em; padding:14px 28px;">
+                                            Leave a Review
+                                        </a>    
+                                    </div>
                                     <div class="testimonials-container">
                                         <div class="testimonial-item">
                                             <div class="circle">Amy S.</div>
@@ -817,6 +822,36 @@
             ]
             }
         </script>
+        <script>
+            function isMobile() {
+                return window.matchMedia("(max-width: 767px)").matches;
+            }
+
+            document.querySelectorAll('.testimonial-item').forEach(function(item) {
+                // For mobile: tap to toggle
+                if (isMobile()) {
+                item.addEventListener('click', function(e) {
+                    // Close other open infos
+                    document.querySelectorAll('.testimonial-item .info').forEach(function(info) {
+                    if (info !== item.querySelector('.info')) info.style.display = 'none';
+                    });
+                    // Toggle this one
+                    var infoDiv = item.querySelector('.info');
+                    infoDiv.style.display = (infoDiv.style.display === 'block') ? 'none' : 'block';
+                    e.stopPropagation();
+                });
+                // Hide info when tapping outside
+                document.body.addEventListener('click', function(e) {
+                    if (!e.target.closest('.testimonial-item')) {
+                    document.querySelectorAll('.testimonial-item .info').forEach(function(info) {
+                        info.style.display = 'none';
+                    });
+                    }
+                });
+                }
+            });
+        </script>
+
 
     </body>
 </html>    
