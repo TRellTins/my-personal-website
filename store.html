@@ -203,7 +203,106 @@
         padding: 1em 0.5em 1.3em 0.5em;
     }
     }
+    /* --- SITE FOOTER --- */
+    .site-footer {
+        max-width: 1000px;
+        margin: 60px auto 0; /* Centers the footer and adds space above it */
+        padding: 28px 20px 36px;
+        border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    .footer-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #f3ede3;
+        text-decoration: none;
+    }
+    .footer-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.12);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        object-fit: contain;
+    }
+    .footer-name {
+        font-weight: 700;
+        letter-spacing: .2px;
+    }
+    .footer-nav {
+        display: inline-flex;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+    .footer-nav a {
+        color: #989fa5;
+        text-decoration: none;
+    }
+    .footer-nav a:hover { 
+        text-decoration: underline; 
+        color: #326978;
+    }
+    .footer-copy {
+        margin: 14px 0 0;
+        color: #989fa5;
+        font-size: 14px;
+        text-align: center;
+    }
+    address {
+        color: #989fa5;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .footer-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+        background: #326978;
+        color: #f3ede3;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .footer-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(50, 105, 120, 0.3);
+        color: #f3ede3;
+    }
+    .footer-citations {
+        margin-top: 6px;
+        font-size: 14px;
+        color: #989fa5;
+        text-align: center;
+    }
+    .footer-citations a {
+        color: #989fa5;
+        text-decoration: none;
+    }
+    .footer-citations a:hover {
+        color: #326978;
+        text-decoration: underline;
+    }
 
+    /* Mobile Adjustments */
+    @media (max-width: 640px) {
+        .footer-inner {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
   </style>
 </head>
 <body>
@@ -491,4 +590,27 @@
         </p>
     </section>
 </body>
+    <footer class="site-footer" role="contentinfo"> 
+            <div class="footer-inner"> 
+                <address>Terrell Tinsley Coaching<br> Mechanicsville, VA 23111</address>
+                <a class="footer-btn" href="/contact">Email me</a>
+                <nav class="footer-nav" aria-label="Social links"> 
+                <a href="https://www.instagram.com/trelltinsley?igsh=MjV0Z3I0em4xcHM0&utm_source=qr" target="_blank" rel="noopener noreferrer nofollow">Instagram</a> 
+                <a href="https://www.facebook.com/profile.php?id=100093490851722&mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer nofollow">Facebook</a> 
+                <a href="https://www.threads.com/@trelltinsley?xmt=AQGzffoazNS8YKJ5oA-856hQrPhD1hTXeRGmBaFl0w9OwWI" target="_blank" rel="noopener noreferrer nofollow">Threads</a> 
+                <!-- <a href="https://www.threads.com/@trelltinsley?xmt=AQGzffoazNS8YKJ5oA-856hQrPhD1hTXeRGmBaFl0w9OwWI" target="_blank" rel="noopener noreferrer nofollow">TikTok</a>  -->
+                <!-- <a href="https://www.threads.com/@trelltinsley?xmt=AQGzffoazNS8YKJ5oA-856hQrPhD1hTXeRGmBaFl0w9OwWI" target="_blank" rel="noopener noreferrer nofollow">Youtube</a>  -->
+                </nav>
+            </div> 
+            
+            <p class="footer-copy">©<span id="year-span">2026</span> Terrell Tinsley Behavioral Coaching • Mechanicsville, VA</p> 
+            
+            <p class="footer-citations"> 
+                <a href="https://share.google/BIOfSjTUCDGK15AFq" target="_blank" rel="noopener noreferrer nofollow">Google Business Profile</a> · 
+                <a href="https://www.yelp.com/biz/terrell-tinsley-mechanicsville" target="_blank" rel="noopener noreferrer nofollow">Yelp</a> 
+            </p>
+        </footer>
+    <script>
+            document.getElementById("year-span").textContent = new Date().getFullYear();
+    </script>    
 </html>
