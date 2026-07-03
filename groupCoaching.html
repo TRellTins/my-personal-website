@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fuel & Lifestyle Discovery Series | Terrell Tinsley Coaching</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/allthree.png"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/allthree.png">
+    <link rel="icon" href="/favicon.ico">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Poppins:regular,600", "Roboto:regular,italic,500,500italic,700,700italic,900,900italic"]
+            }
+        });
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #0b0c0e;
+            --surface: #181a1b;
+            --text-main: #f3ede3;
+            --text-muted: #989fa5;
+            --brand-teal: #326978;
+            --brand-dark: #15374e;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        .header-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .form-card {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        h1 {
+            color: var(--brand-teal);
+            font-size: 32px;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        /* --- NEW DETAILS SECTION --- */
+        .series-details {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .series-details p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        .benefits-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--brand-teal);
+            font-weight: bold;
+        }
+
+        .desk-registration {
+            background: linear-gradient(180deg, rgba(50, 105, 120, 0.15), rgba(21, 55, 78, 0.1));
+            border: 1px solid rgba(50, 105, 120, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .desk-registration h3 {
+            margin: 0 0 8px 0;
+            color: #f3ede3;
+            font-size: 18px;
+        }
+
+        .desk-registration p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .form-intro h3 {
+            margin: 0 0 8px 0;
+            color: #f3ede3;
+            font-size: 20px;
+        }
+
+        .form-intro p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* --- FORM STYLES --- */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--brand-teal);
+            box-shadow: 0 0 0 3px rgba(50, 105, 120, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(90deg, #326978 60%, #15374e 100%);
+            color: #f3ede3;
+            font-size: 1.15rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(50, 105, 120, 0.3);
+        }
+
+        /* --- SITE FOOTER --- */
+        .site-footer {
+            background: #181a1b url('https://cdn.prod.website-files.com/6292458ea6c91805d3cb2506/629759bce5f0f5ed3d86fe81_bg-image.jpg') repeat;
+            margin-top: 60px; 
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            width: 100%;
+        }
+
+        .footer-content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        address {
+            color: #989fa5;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            background: #326978;
+            color: #f3ede3;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .footer-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(50, 105, 120, 0.3);
+            color: #f3ede3;
+        }
+
+        .footer-nav {
+            display: inline-flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a, .footer-citations a {
+            color: #989fa5;
+            text-decoration: none;
+        }
+
+        .footer-nav a:hover, .footer-citations a:hover { 
+            text-decoration: underline; 
+            color: #326978;
+        }
+
+        .footer-copy, .footer-citations {
+            margin: 14px 0 0;
+            color: #989fa5;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            .form-card {
+                padding: 24px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-logo">
+            <a href="/index.html">
+                <img src="/images/allthree.png" alt="Terrell Tinsley Coaching">
+            </a>
+        </div><
+
+        <div class="form-card">
+            <h1>Fuel & Lifestyle Discovery Series:<br>"Training the Brain"</h1>
+            
+            <div class="series-details">
+                <p>This isn’t another class telling you what you should or shouldn’t do. It’s a chance to <em>better understand</em> the routines, habits, and patterns that shape your everyday decisions.</p>
+                <h3>Together we'll:</h3>
+                <ul class="benefits-list">
+                    <li>Identify the patterns that keep you stuck in the same start-and-stop cycle.</li>
+                    <li>Build routines that can flex with real life—even on your busiest days.</li>
+                    <li>Learn alongside a small group of people working through many of the same challenges.</li>
+                </ul>
+
+                <div class="desk-registration">
+                    <h3>Know this is exactly what you need?</h3>
+                    <p>Skip the form and secure your spot today by registering directly at the <strong>AMFAM Welcome Desk</strong>.<br><em>*To keep the conversations personal and give everyone time to participate, the group is limited to six people.</em></p>
+                </div>
+            </div>
+
+            <div class="form-intro">
+                <h3>Want to learn more first?</h3>
+                <p>Drop your info below. I’ll personally reach out to answer your questions and see if this cohort is the right fit for you.</p>
+            </div>
+
+            <form action="#" method="POST">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customQuestion">What’s weighing you down right now?</label>
+                    <textarea id="customQuestion" name="customQuestion" placeholder="Don't overthink it, just share what comes to mind..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Me More Info</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer" role="contentinfo"> 
+        <div class="footer-content-wrapper">
+            <div class="footer-inner"> 
+                <address>Terrell Tinsley Coaching LLC<br> Mechanicsville, VA 23111</address>
+                
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <a class="footer-btn" href="/contact">Email me</a>
+                    <a class="footer-btn" href="tel:8042231116">804 223 1116</a>
+                </div>
+    
+                <nav class="footer-nav" aria-label="Social links"> 
+                    <a href="https://www.instagram.com/trelltinsley" target="_blank" rel="noopener noreferrer nofollow">Instagram</a> 
+                    <a href="https://www.facebook.com/profile.php?id=100093490851722" target="_blank" rel="noopener noreferrer nofollow">Facebook</a>
+                    <a href="https://www.threads.com/@trelltinsley" target="_blank" rel="noopener noreferrer nofollow">Threads</a> 
+                    <a href="https://www.tiktok.com/@thebehavioralshift" target="_blank" rel="noopener noreferrer nofollow">TikTok</a> 
+                    <a href="https://www.youtube.com/@TheBehaviorShift" target="_blank" rel="noopener noreferrer nofollow">Youtube</a> 
+                </nav>
+            </div> 
+            
+            <p class="footer-copy">©<span id="year-span">2026</span> Terrell Tinsley Coaching LLC • Mechanicsville, VA</p> 
+            
+            <p class="footer-citations"> 
+                <a href="https://share.google/BIOfSjTUCDGK15AFq" target="_blank" rel="noopener noreferrer nofollow">Google Business Profile</a> · 
+                <a href="https://www.yelp.com/biz/terrell-tinsley-mechanicsville" target="_blank" rel="noopener noreferrer nofollow">Yelp</a> 
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year-span").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
