@@ -302,6 +302,29 @@
             }
             h1 { font-size: 26px; }
         }
+        /* --- SUCCESS MESSAGE STYLES --- */
+        #successMessage {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(50, 105, 120, 0.15);
+            border: 1px solid var(--brand-teal);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        #successMessage h3 {
+            color: #f3ede3;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        #successMessage p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -336,8 +359,8 @@
                 <p>Drop your info below. I’ll personally reach out to answer your questions and see if this cohort is the right fit for you.</p>
             </div>
 
-            <form action="#" method="POST">
-                
+            <form id="groupCoachingForm" name="group-coaching" method="POST" data-netlify="true">
+    
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
@@ -348,7 +371,7 @@
                         <input type="text" id="lastName" name="lastName" required>
                     </div>
                 </div>
-
+            
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -359,14 +382,19 @@
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="customQuestion">What’s weighing you down right now?</label>
                     <textarea id="customQuestion" name="customQuestion" placeholder="Don't overthink it, just share what comes to mind..."></textarea>
                 </div>
-
+            
                 <button type="submit" class="submit-btn">Send Me More Info</button>
             </form>
+
+<div id="successMessage">
+    <h3>Thank You!</h3>
+    <p>I have received your information. I will reach out via email within 24 hours to answer your questions and see if this cohort is a good fit.</p>
+</div>
         </div>
     </div>
 
@@ -397,8 +425,33 @@
             </p>
         </div>
     </footer>
-
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('groupCoachingForm');
+            const successMessage = document.getElementById('successMessage');
+    
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Stop the page from reloading
+    
+                // Gather the data from the form
+                const formData = new FormData(form);
+    
+                // Send it to Netlify in the background
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    // Hide the form and show your custom thank you message
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                })
+                .catch((error) => {
+                    alert("There was an error submitting the form. Please try again.");
+                });
+            });
+        });
         document.getElementById("year-span").textContent = new Date().getFullYear();
     </script>
 </body>
