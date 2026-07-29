@@ -159,13 +159,17 @@
       const errorMsg = document.getElementById('reviewError');
 
       form.addEventListener('submit', function(e) {
+        // 1. Stop the page from reloading
         e.preventDefault();
+        
         const firstName = document.getElementById('firstName').value.trim();
         const lastInitial = document.getElementById('lastInitial').value.trim();
         const reviewText = document.getElementById('reviewText').value.trim();
 
         if(firstName && lastInitial && reviewText) {
-          successMsg.innerHTML =
+          
+          // 2. Build the new success message with the drop-down template
+          successMsg.innerHTML = 
             `<div>Thank you for your review!</div>
             <div style="margin-top:1em;">
               <strong>Here's what you wrote:</strong>
@@ -173,19 +177,43 @@
                 <b>${firstName} ${lastInitial}.</b><br>
                 ${reviewText.replace(/\n/g, "<br>")}
               </div>
-              <div>
-                If you have a moment,<br>
-                please <a href="https://g.page/r/CQivTiKUBBC4EAE/review" target="_blank" id="googleReviewLink" style="color:#326978; font-weight:700; text-decoration:underline;">copy your review to Google</a> as well.<br><br>
-                It helps others find support!
+              
+              <div style="margin-bottom: 24px;">
+                If you have a moment, please <a href="https://g.page/r/CQivTiKUBBC4EAE/review" target="_blank" id="googleReviewLink" style="color:#326978; font-weight:700; text-decoration:underline;">copy your review to Google</a> as well.<br>It helps others find support!
+              </div>
+
+              <hr style="border: 0; border-top: 1px solid rgba(50,105,120,0.2); margin: 24px 0;">
+              
+              <div style="background: rgba(50, 105, 120, 0.1); padding: 18px; border-radius: 8px; border-left: 4px solid #326978; text-align: left;">
+                <h4 style="margin: 0 0 8px 0; color: #15374e; font-size: 1.1em;">A Gift to Pass On</h4>
+                <p style="margin: 0; font-size: 0.95em; color: #29414c; line-height: 1.5;">Because you know what this process looks like firsthand, I want to give you the chance to pass it on. As a thank you for your review, you now have <strong>one fully gifted coaching session</strong> to give to a friend, family member, or colleague. Just tell them to mention your name when they reach out.</p>
+                
+                <div style="margin-top: 16px;">
+                  <details style="cursor: pointer; outline: none;">
+                    <summary style="color: #326978; font-weight: 700; font-size: 0.9em; text-decoration: underline;">Not sure what to say? Click here for a quick text template you can copy and paste.</summary>
+                    <div style="background: #fff; border: 1px solid rgba(50,105,120,0.2); padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 0.95em; color: #29414c; line-height: 1.5; cursor: text;">
+                      Hey [Name]! I recently had a coaching conversation with Terrell, and it gave me the chance to slow down and think through a few things. As a thank you for leaving him a review, he gave me a complimentary session to pass along to someone. I thought of you. If you're interested, I'd be happy to introduce you.
+                    </div>
+                  </details>
+                </div>
+
               </div>
             </div>`;
+            
           successMsg.style.display = 'block';
           errorMsg.style.display = 'none';
+          
+          // Hide the form fields
           form.querySelectorAll('input, textarea, button, label').forEach(el => el.style.display = 'none');
-          // Give user 10 seconds to copy/paste, then submit to Netlify
-          setTimeout(function() {
-            form.submit();
-          }, 10000);
+          
+          // 3. Send the review directly to Netlify in the background
+          const formData = new FormData(form);
+          fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams(formData).toString()
+          }).catch((error) => console.error('Form submission error:', error));
+
         } else {
           errorMsg.style.display = 'block';
           successMsg.style.display = 'none';
