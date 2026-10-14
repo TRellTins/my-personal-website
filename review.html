@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Leave a Review | Terrell Tinsley Coaching</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Brand Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:400,600|Roboto:400,500,700,900&display=swap" rel="stylesheet">
   <style>
     body {
@@ -23,7 +22,7 @@
       background: #f3ede3;
       border-radius: 16px;
       box-shadow: 0 6px 32px rgba(50,105,120,0.09);
-      max-width: 420px;
+      max-width: 480px;
       width: 95%;
       padding: 2.5em 1.5em 2em 1.5em;
       margin: 3em auto;
@@ -36,21 +35,7 @@
       margin-bottom: 0.6em;
       letter-spacing: 0.01em;
     }
-    .review-logo-img:hover, .review-logo-img:focus {
-      transform: scale(1.07) rotate(-5deg);
-      box-shadow: 0 0 0 8px rgba(50,105,120,0.13);
-      cursor: pointer;
-    }
-    @media (max-width: 500px) {
-      .review-logo-img {
-        width: 34px;
-        height: 34px;
-      }
-      .review-title-row {
-        gap: 10px;
-      }
-    }
-    .review-form label {
+    .review-form label, .referral-form label {
       display: block;
       margin-top: 1.1em;
       margin-bottom: 0.3em;
@@ -58,8 +43,8 @@
       font-weight: 600;
       font-size: 1.05em;
     }
-    .review-form input[type="text"],
-    .review-form textarea {
+    .review-form input[type="text"], .review-form textarea,
+    .referral-form input[type="text"], .referral-form select {
       width: 100%;
       padding: 0.7em 0.9em;
       border: 1.5px solid #c4a96a;
@@ -72,17 +57,16 @@
       transition: border 0.2s;
       box-sizing: border-box;
     }
-    .review-form input[type="text"]:focus,
-    .review-form textarea:focus {
+    .review-form input:focus, .review-form textarea:focus,
+    .referral-form input:focus, .referral-form select:focus {
       border-color: #326978;
       outline: none;
     }
     .review-form textarea {
       min-height: 110px;
-      max-height: 260px;
       resize: vertical;
     }
-    .review-btn {
+    .btn-primary {
       background: linear-gradient(90deg, #326978 60%, #15374e 100%);
       color: #f3ede3;
       font-weight: 700;
@@ -96,141 +80,244 @@
       width: 100%;
       transition: background 0.18s, color 0.18s;
     }
-    .review-btn:hover, .review-btn:focus {
+    .btn-primary:hover {
       background: #f3ede3;
       color: #326978;
       border: 1.5px solid #326978;
     }
-    .review-success, .review-error {
+    
+    /* Social Share Buttons */
+    .social-btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .social-btn {
+      flex: 1;
       text-align: center;
-      margin-top: 1.3em;
-      font-size: 1.1em;
-      display: none;
-    }
-    .review-success {
-      color: #326978;
-      font-weight: 700;
-    }
-    .review-error {
-      color: #d7263d;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
       font-weight: 600;
+      font-size: 0.9em;
+      color: white;
+      min-width: 120px;
     }
-    @media (max-width: 600px) {
-      .review-section {
-        padding: 1.1em 0.4em 1.4em 0.4em;
-      }
-      .review-title {
-        font-size: 1.3em;
-      }
+    .fb-btn { background: #1877F2; }
+    .li-btn { background: #0A66C2; }
+    .ig-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+    /* Video Container for responsive iframe */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; 
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin: 16px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
   <div class="review-section">
-    <div class="review-title-row" style="display: flex; align-items: center; justify-content: center; gap: 18px;">
+    
+    <!-- STEP 1: THE REVIEW FORM -->
+    <div id="step1-review">
       <div class="review-title">Leave a Review</div>
-      <a href="/index.html" aria-label="Back to Home">
-        <img src="/images/allthree.png" alt="Back to Home" class="review-logo-img" style="width:48px; height:48px; border-radius:50%; box-shadow:0 2px 10px rgba(50,105,120,0.07); transition:transform 0.18s;">
-      </a>
+      <form name="review" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="review-form" id="reviewForm" autocomplete="off">
+        <input type="hidden" name="form-name" value="review">
+        <p style="display:none;"><label>Don’t fill this out if you’re human: <input name="bot-field"></label></p>
+        
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" maxlength="25" required placeholder="Your first name">
+
+        <label for="lastInitial">Last Initial</label>
+        <input type="text" id="lastInitial" name="lastInitial" maxlength="1" required placeholder="E.g., T">
+
+        <label for="reviewText">Your Review</label>
+        <textarea id="reviewText" name="reviewText" maxlength="600" required placeholder="Share your experience..."></textarea>
+
+        <button type="submit" class="btn-primary">Submit Review</button>
+      </form>
     </div>
-    <form name="review" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="review-form" id="reviewForm" autocomplete="off">
-      <input type="hidden" name="form-name" value="review">
-      <p style="display:none;">
-        <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
-      </p>
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="firstName" maxlength="25" required placeholder="Your first name">
 
-      <label for="lastInitial">Last Initial</label>
-      <input type="text" id="lastInitial" name="lastInitial" maxlength="1" required placeholder="E.g., T">
+    <!-- STEP 2: THE THANK YOU & REFERRAL ENGINE (Hidden initially) -->
+    <div id="step2-success" style="display: none;">
+      
+      <div style="text-align: center;">
+        <h2 style="color: #326978; margin-top: 0;">Thank You!</h2>
+      </div>
 
-      <label for="reviewText">Your Review</label>
-      <textarea id="reviewText" name="reviewText" maxlength="600" required placeholder="Share your experience..."></textarea>
+      <!-- THIS IS THE RESTORED REVIEW TEXT DISPLAY -->
+      <div style="margin-top:1em;">
+        <strong>Here's what you wrote:</strong>
+        <div id="userReviewContent" style="background:#fff; border-radius:8px; margin:1em 0; padding:1em; color:#22313a; box-shadow:0 2px 8px rgba(50,105,120,0.06); font-size:1em;">
+          <!-- JavaScript will inject the review text here -->
+        </div>
+      </div>
 
-      <button type="submit" class="review-btn">Submit Review</button>
-      <div class="review-success" id="reviewSuccess"></div>
-      <div class="review-error" id="reviewError">Please fill out all fields.</div>
-    </form>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <p>If you have a moment, please <a href="https://g.page/r/CQivTiKUBBC4EAE/review" target="_blank" id="googleReviewLink" style="color:#c4a96a; font-weight:700; text-decoration:underline;">copy your review to Google</a> to help others find support.</p>
+      </div>
+
+      <!-- YouTube Video Embed -->
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID?rel=0&modestbranding=1" title="Thank You" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid rgba(50,105,120,0.2); margin: 24px 0;">
+
+      <div style="background: rgba(50, 105, 120, 0.1); padding: 18px; border-radius: 8px; border-left: 4px solid #326978;">
+        <h4 style="margin: 0 0 8px 0; color: #15374e; font-size: 1.1em;">A Gift to Pass On</h4>
+        <p style="margin: 0 0 16px 0; font-size: 0.95em; color: #29414c; line-height: 1.5;">
+          As a thank you, you now have <strong>one fully gifted coaching session</strong> to pass on. 
+        </p>
+
+        <!-- Social Share Buttons -->
+        <div class="social-btn-container">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://ttinsley.dev" target="_blank" class="social-btn fb-btn">Share on Facebook</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://ttinsley.dev" target="_blank" class="social-btn li-btn">Share on LinkedIn</a>
+          <button type="button" id="nativeShareBtn" class="social-btn ig-btn" style="border:none; cursor:pointer; font-family:inherit;">Share via App (IG, Text)</button>
+        </div>
+
+        <!-- Copy and Paste Text -->
+        <div style="margin-top: 16px;">
+          <details style="cursor: pointer; outline: none;">
+            <summary style="color: #326978; font-weight: 700; font-size: 0.9em; text-decoration: underline;">Or click here for a quick text template to copy and paste.</summary>
+            <div style="background: #fff; border: 1px solid rgba(50,105,120,0.2); padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 0.9em; color: #29414c; line-height: 1.5;">
+              Hey! <br><br>I recently had a coaching conversation with Terrell, and it gave me the chance to slow down and think through a few things. <br><br>As a thank you for leaving him a review, he gave me a complimentary session to pass along to someone. <br><br>I thought of you. <br><br>If you're interested, I'd be happy to introduce you.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid rgba(50,105,120,0.2); margin: 24px 0;">
+
+      <!-- Direct Referral Form -->
+      <h4 style="margin: 0 0 8px 0; color: #15374e; font-size: 1.1em; text-align: center;">Rather I reach out to them?</h4>
+      <p style="font-size: 0.9em; text-align: center; margin-top: 0;">Fill out their info below and I'll send them a no-pressure message.</p>
+      
+      <form name="referral" method="POST" data-netlify="true" class="referral-form" id="referralForm">
+        <input type="hidden" name="form-name" value="referral">
+        <input type="hidden" id="referrerName" name="referrerName" value="">
+        
+        <label>Friend's Name</label>
+        <input type="text" name="friendName" required>
+
+        <label>How do you know them?</label>
+        <input type="text" name="relationship" placeholder="Co-worker, brother, friend..." required>
+
+        <label>Best way to contact them?</label>
+        <select name="contactMethod" required>
+          <option value="" disabled selected>Select an option...</option>
+          <option value="Email">Email</option>
+          <option value="Text">Text Message</option>
+          <option value="Social Media">Social Media</option>
+        </select>
+
+        <!-- UPDATED LABEL HERE -->
+        <label>Their Contact Info (Email, Phone, or Handle & platform)</label>
+        <input type="text" name="contactInfo" required>
+
+        <button type="submit" class="btn-primary" id="referralBtn">Send Referral</button>
+        <div id="referralSuccess" style="display:none; color:#326978; font-weight:bold; text-align:center; margin-top:1em;">Referral sent safely! Thank you.</div>
+      </form>
+
+    </div>
   </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('reviewForm');
-      const successMsg = document.getElementById('reviewSuccess');
-      const errorMsg = document.getElementById('reviewError');
+      const reviewForm = document.getElementById('reviewForm');
+      const step1 = document.getElementById('step1-review');
+      const step2 = document.getElementById('step2-success');
+      const referralForm = document.getElementById('referralForm');
+      const userReviewContent = document.getElementById('userReviewContent');
 
-      form.addEventListener('submit', function(e) {
-        // 1. Stop the page from reloading
+      // 1. Handle the Initial Review Submission
+      reviewForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const firstName = document.getElementById('firstName').value.trim();
         const lastInitial = document.getElementById('lastInitial').value.trim();
         const reviewText = document.getElementById('reviewText').value.trim();
 
-        if(firstName && lastInitial && reviewText) {
-          
-          // 2. Build the new success message with the drop-down template
-          successMsg.innerHTML = 
-            `<div>Thank you for your review!</div>
-            <div style="margin-top:1em;">
-              <strong>Here's what you wrote:</strong>
-              <div style="background:#fff; border-radius:8px; margin:1em 0; padding:1em; color:#22313a; box-shadow:0 2px 8px rgba(50,105,120,0.06); font-size:1em;">
-                <b>${firstName} ${lastInitial}.</b><br>
-                ${reviewText.replace(/\n/g, "<br>")}
-              </div>
-              
-              <div style="margin-bottom: 24px;">
-                If you have a moment, please <a href="https://g.page/r/CQivTiKUBBC4EAE/review" target="_blank" id="googleReviewLink" style="color:#326978; font-weight:700; text-decoration:underline;">copy your review to Google</a> as well.<br>It helps others find support!
-              </div>
+        // Populate the hidden form field for the referral form
+        document.getElementById('referrerName').value = firstName;
 
-              <hr style="border: 0; border-top: 1px solid rgba(50,105,120,0.2); margin: 24px 0;">
-              
-              <div style="background: rgba(50, 105, 120, 0.1); padding: 18px; border-radius: 8px; border-left: 4px solid #326978; text-align: left;">
-                <h4 style="margin: 0 0 8px 0; color: #15374e; font-size: 1.1em;">A Gift to Pass On</h4>
-                <p style="margin: 0; font-size: 0.95em; color: #29414c; line-height: 1.5;">Thank you again for taking the time to leave a review.<br><br>As a small thank you, I'd love to pass that kindness along. I'd like to gift <strong>one complimentary coaching conversation</strong> to someone you care about.<br><br> If someone comes to mind, send them the message below and have them mention your name when they reach out.</p>
-                
-                <div style="margin-top: 16px;">
-                  <details style="cursor: pointer; outline: none;">
-                    <summary style="color: #326978; font-weight: 700; font-size: 0.9em; text-decoration: underline;">Not sure what to say? Click here for a quick text template you can copy and paste.</summary>
-                    <div style="background: #fff; border: 1px solid rgba(50,105,120,0.2); padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 0.95em; color: #29414c; line-height: 1.5; cursor: text;">
-                      Hey [Name]! I recently had a coaching conversation with Terrell, and it gave me the chance to slow down and think through a few things. As a thank you for leaving him a review, he gave me a complimentary session to pass along to someone. I thought of you. If you're interested, I'd be happy to introduce you.
-                    </div>
-                  </details>
-                </div>
+        // POPULATE THE REVIEW TEXT DISPLAY
+        userReviewContent.innerHTML = `<b>${firstName} ${lastInitial}.</b><br>${reviewText.replace(/\n/g, "<br>")}`;
 
-              </div>
-            </div>`;
+        // Send Review to Netlify
+        const formData = new FormData(reviewForm);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            // Hide review form, show success/referral section
+            step1.style.display = 'none';
+            step2.style.display = 'block';
             
-          successMsg.style.display = 'block';
-          errorMsg.style.display = 'none';
-          
-          // Hide the form fields
-          form.querySelectorAll('input, textarea, button, label').forEach(el => el.style.display = 'none');
-          
-          // 3. Send the review directly to Netlify in the background
-          const formData = new FormData(form);
-          fetch("/", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: new URLSearchParams(formData).toString()
-          }).catch((error) => console.error('Form submission error:', error));
-
-        } else {
-          errorMsg.style.display = 'block';
-          successMsg.style.display = 'none';
-        }
+            // Scroll to top of the card
+            window.scrollTo({ top: step2.offsetTop - 50, behavior: 'smooth' });
+        }).catch((error) => console.error('Error:', error));
       });
 
-      // Google Analytics click tracking
+      // 2. Handle the Direct Referral Submission
+      referralForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('referralBtn');
+        btn.innerHTML = "Sending...";
+        
+        const formData = new FormData(referralForm);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            referralForm.querySelectorAll('input:not([type="hidden"]), select, label, button').forEach(el => el.style.display = 'none');
+            document.getElementById('referralSuccess').style.display = 'block';
+        }).catch((error) => {
+            btn.innerHTML = "Send Referral";
+            console.error('Error:', error);
+        });
+      });
+
+      // 3. Native Mobile Sharing (Web Share API for Instagram, WhatsApp, iMessage)
+      const nativeShareBtn = document.getElementById('nativeShareBtn');
+      if (nativeShareBtn) {
+        // Check if the user's device supports native sharing (most modern phones do)
+        if (navigator.share) {
+          nativeShareBtn.addEventListener('click', function() {
+            navigator.share({
+              title: 'Terrell Tinsley Coaching',
+              text: "I recently had a coaching conversation with Terrell, and it gave me the chance to slow down and think through a few things. As a thank you for leaving him a review, he gave me a complimentary session to pass along. Check him out!",
+              url: 'https://ttinsley.dev'
+            }).catch(console.error);
+          });
+        } else {
+          // If they are on an old desktop browser that doesn't support sharing, hide the button
+          nativeShareBtn.style.display = 'none';
+        }
+      }
+
+      // Google Analytics Tracking
       document.addEventListener('click', function(e) {
         if (e.target && e.target.id === 'googleReviewLink' && window.gtag) {
-          gtag('event', 'click', {
-            'event_category': 'review',
-            'event_label': 'Google Review Link Clicked'
-          });
+          gtag('event', 'click', { 'event_category': 'review', 'event_label': 'Google Review Link Clicked' });
         }
       });
     });
   </script>
 </body>
 </html>
-
